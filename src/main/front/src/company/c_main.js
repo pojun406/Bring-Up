@@ -1,10 +1,16 @@
 import React from 'react';
+import Header from "./header/header";
+import "./c_main.css";
+
 
 const c_main = () => {
     return (
-        <div>
-            <h1>Company Page</h1>
-            <p>이 페이지는 /company 경로에 해당합니다.</p>
+        <div className="main">
+            <Header />
+            <div className="content">
+                <div>content</div>
+                <p> /company 경로</p>
+            </div>
         </div>
     );
 };
