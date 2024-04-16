@@ -16,3 +16,9 @@ IT업계를 메인타겟으로 한 구인구직 사이트입니다.
 - **Java 17**
 - **Spring Boot 3.x.x** ( 추후 버전 확실시되면 변경예정 )
 - **React**
+
+## 개요
+### Flow Chart
+<img src="https://github.com/pojun406/Bring-Up/blob/main/imagefile/BringUp-FlowChart.png">
+
+### Diagram
