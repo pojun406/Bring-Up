@@ -6,6 +6,7 @@
     padding-top: 15px;
     justify-content: center;
     align-items: center;
+    gap: 50px;
 }
 
 .category {
@@ -36,6 +37,8 @@
     color: #ffffff;
     background-color: #83b1ff;
 }
+
+
 
 .logo {
     background: #ffffff;
@@ -93,4 +96,11 @@
     background-color: #ffffff;
     border: none;
     cursor: pointer;
+}
+
+.line{
+    justify-content: center;
+    background-color: #d4ddff;
+    height: 1px;
+    border:0;
 }
