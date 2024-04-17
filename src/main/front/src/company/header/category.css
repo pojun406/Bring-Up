@@ -1,0 +1,100 @@
+a[href]{
+    text-decoration: none;
+}
+li{
+    text-align: center;
+    list-style: none;
+
+}
+.category{
+    display: flex;
+    padding: 0 30px;
+    border: solid;
+    border-width: 1px;
+    border-color: #82ACFF;
+    border-radius: 50px;
+}
+.list{
+    width: 140px;
+    height: 50px;
+    margin: 0 2px;
+    background-color: white;
+    border:none;
+    color: #82ACFF;
+    transition: background-color 0.3s ease;
+}
+.list:hover{
+    background-color: #82ACFF;
+    color: white;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.dropdown-menu li {
+    padding: 10px 15px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f1f1f1;
+}
+
+.category {
+    display: flex;
+    padding: 0 30px;
+    border: 1px solid #82acff;
+    border-radius: 50px;
+}
+
+.list {
+    width: 140px;
+    height: 50px;
+    margin: 0 2px;
+    background-color: white;
+    border: none;
+    color: #82acff;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.list:hover {
+    background-color: #82acff;
+    color: white;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 1; /* 다른 요소 위에 표시되도록 z-index 설정 */
+}
+
+.dropdown-menu li {
+    padding: 10px 15px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f1f1f1;
+}
+

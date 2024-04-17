@@ -9,37 +9,6 @@
     gap: 50px;
 }
 
-.category {
-    flex-direction: row;
-    border-radius: 50px;
-    border-style: solid;
-    border-color: #82acff;
-    border-width: 1px;
-    height: 50px;
-    justify-content: center;
-    margin: 20px 0;
-    padding: 0 20px;
-}
-.category button {
-    width: 140px;
-    height: 50px;
-    background-color: #ffffff;
-    border: none;
-    color: #82acff;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    margin: 0 10px;
-}
-
-.category button:hover {
-    color: #ffffff;
-    background-color: #83b1ff;
-}
-
-
-
 .logo {
     background: #ffffff;
     display: flex;
