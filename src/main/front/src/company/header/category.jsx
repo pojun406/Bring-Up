@@ -2,177 +2,63 @@ import React, { useRef, useState } from "react";
 import "./category.css";
 
 const Category = () => {
-    const dropdownRefs = [
-        useRef(null),
-        useRef(null),
-        useRef(null),
-        useRef(null),
-    ];
-    const [isOpens, setIsOpens] = useState([false, false, false, false]);
+    const dropdownRefs = useRef(Array(4).fill(null));
+    const [openIndex, setOpenIndex] = useState(null);
 
-    const handleClicks = (index) => {
-        setIsOpens((prev) => {
-            const updatedIsOpens = [...prev];
-            updatedIsOpens[index] = !updatedIsOpens[index];
-            return updatedIsOpens;
-        });
+    const handleMouseEnter = (index) => {
+        setOpenIndex(index);
     };
 
-    const handleCloses = (event, index) => {
-        if (dropdownRefs[index].current && !dropdownRefs[index].current.contains(event.target)) {
-            setIsOpens((prev) => {
-                const updatedIsOpens = [...prev];
-                updatedIsOpens[index] = false;
-                return updatedIsOpens;
-            });
+    const handleMouseLeave = () => {
+        setOpenIndex(null);
+    };
+
+    const handleItemClick = (event) => {
+        event.stopPropagation(); // 부모 요소의 클릭 이벤트가 발생하지 않도록 이벤트 전파 중단
+        // 클릭된 요소가 a 태그인 경우에만 드롭다운 메뉴가 닫히도록 설정
+        if (event.target.tagName === "A") {
+            setOpenIndex(null);
         }
     };
 
+    const categories = [
+        { label: "공고", options: ["옵션 1", "옵션 2", "옵션 3"] },
+        { label: "상품", options: ["옵션 1", "옵션 2", "옵션 3"] },
+        { label: "리뷰 관리", options: ["옵션 1", "옵션 2", "옵션 3"] },
+        { label: "인재 추천", options: ["옵션 1", "옵션 2", "옵션 3"] },
+    ];
+
     return (
         <div className="category">
-            <div>
-                <div className="dropdown">
-                    <button
-                        className="list"
-                        onMouseEnter={() => setIsOpens(true)}
-                        onMouseLeave={() => setIsOpens(false)}
-                    >
-                        공고
-                    </button>
-                    {isOpens && (
+            {categories.map((category, index) => (
+                <div
+                    key={index}
+                    className="dropdown-wrapper"
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={handleItemClick}
+                >
+                    <button className="list">{category.label}</button>
+                    {openIndex === index && (
                         <ul
                             className="dropdown-menu"
-                            ref={dropdownRefs[0]}
-                            onMouseEnter={() => setIsOpens(true)}
-                            onMouseLeave={() => setIsOpens(false)}
+                            ref={(el) => (dropdownRefs.current[index] = el)}
+                            onMouseEnter={() => handleMouseEnter(index)} // 드롭다운 메뉴에 마우스가 들어가도 드롭다운을 유지
+                            onMouseLeave={handleMouseLeave}
                         >
-                            <li>
-                                <a className="dropdown-item" href="#">
-                                    옵션 1
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="#">
-                                    옵션 2
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="#">
-                                    옵션 3
-                                </a>
-                            </li>
+                            {category.options.map((option, optionIndex) => (
+                                <li key={optionIndex}>
+                                    <a className="dropdown-item" href="#">
+                                        {option}
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
                     )}
                 </div>
-            </div>
-            <div>
-                <div className="dropdown">
-                    <button
-                        className="list"
-                        onMouseEnter={() => setIsOpens(true)}
-                        onMouseLeave={() => setIsOpens(false)}
-                    >
-                        상품
-                    </button>
-                    {isOpens && (
-                        <ul
-                            className="dropdown-menu"
-                            ref={dropdownRefs[1]}
-                            onMouseEnter={() => setIsOpens(true)}
-                            onMouseLeave={() => setIsOpens(false)}
-                        >
-                            <li>
-                                <a className="dropdown-item" href="#">
-                                    옵션 1
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="#">
-                                    옵션 2
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="#">
-                                    옵션 3
-                                </a>
-                            </li>
-                        </ul>
-                    )}
-                </div>
-            </div>
-            <div>
-                <div className="dropdown">
-                    <button
-                        className="list"
-                        onMouseEnter={() => setIsOpens(true)}
-                        onMouseLeave={() => setIsOpens(false)}
-                    >
-                        리뷰 관리
-                    </button>
-                    {isOpens && (
-                        <ul
-                            className="dropdown-menu"
-                            ref={dropdownRefs[2]}
-                            onMouseEnter={() => setIsOpens(true)}
-                            onMouseLeave={() => setIsOpens(false)}
-                        >
-                            <li>
-                                <a className="dropdown-item" href="#">
-                                    옵션 1
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="#">
-                                    옵션 2
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="#">
-                                    옵션 3
-                                </a>
-                            </li>
-                        </ul>
-                    )}
-                </div>
-            </div>
-            <div>
-                <div className="dropdown">
-                    <button
-                        className="list"
-                        onMouseEnter={() => setIsOpens(true)}
-                        onMouseLeave={() => setIsOpens(false)}
-                    >
-                        인재 추천
-                    </button>
-                    {isOpens && (
-                        <ul
-                            className="dropdown-menu"
-                            ref={dropdownRefs[3]}
-                            onMouseEnter={() => setIsOpens(true)}
-                            onMouseLeave={() => setIsOpens(false)}
-                        >
-                            <li>
-                                <a className="dropdown-item" href="#">
-                                    옵션 1
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="#">
-                                    옵션 2
-                                </a>
-                            </li>
-                            <li>
-                                <a className="dropdown-item" href="#">
-                                    옵션 3
-                                </a>
-                            </li>
-                        </ul>
-                    )}
-                </div>
-            </div>
+            ))}
         </div>
-    )
-}
+    );
+};
 
 export default Category;
-

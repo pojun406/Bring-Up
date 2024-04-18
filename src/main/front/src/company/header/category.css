@@ -98,3 +98,18 @@ li{
     background-color: #f1f1f1;
 }
 
+.dropdown-wrapper {
+    position: relative; /* 부모 요소를 relative로 설정 */
+}
+
+.dropdown-menu {
+    position: absolute; /* 절대 위치로 설정 */
+    top: 100%; /* 부모 요소 아래에 표시되도록 설정 */
+    left: 0; /* 부모 요소의 왼쪽에 표시되도록 설정 */
+    display: none; /* 초기에는 보이지 않도록 설정 */
+}
+
+.dropdown-wrapper:hover .dropdown-menu {
+    display: block; /* 호버 상태에서 드롭다운 메뉴를 보이도록 설정 */
+}
+
