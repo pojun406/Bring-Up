@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from "./header/header";
+import Header from "../company_header/header";
 import "./c_main.css";
 
 function c_main() {
@@ -7,7 +7,7 @@ function c_main() {
         <div className="main">
             <Header />
             <div className="content">
-                <div>content</div>
+                <div>메인</div>
                 <p> /company 경로</p>
             </div>
         </div>

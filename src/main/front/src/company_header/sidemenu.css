@@ -37,9 +37,13 @@
 }
 
 .menu{
+    border-radius: 5px;
     background-color: #ffffff;
     border: none;
     cursor: pointer;
+}
+.menu:hover{
+    background-color: #f1f1f1
 }
 .logout-button{
     position: fixed;

@@ -1,0 +1,74 @@
+a[href] {
+    text-decoration: none;
+}
+
+li {
+    text-align: center;
+    list-style: none;
+}
+
+.category {
+    display: flex;
+    padding: 0 30px;
+    border: 1px solid #82acff;
+    border-radius: 50px;
+}
+
+.list {
+    width: 140px;
+    height: 50px;
+    margin: 0 2px;
+    background-color: white;
+    border: none;
+    color: #82acff;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.list:hover {
+    background-color: #82acff;
+    color: white;
+}
+
+.dropdown { /* Removed unused class */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Removed redundant top positioning */
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 1; /* Other elements will respect this z-index */
+    transition: transform 0.3s ease; /* Animation for slide-down effect */
+    transform: translateY(0%); /* Initial off-screen position */
+}
+
+.dropdown-menu.show { /* New class for animation trigger */
+    transform: translateY(0); /* Animate to visible position */
+}
+
+.dropdown-menu li {
+    padding: 10px 15px;
+    background-color: white;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-wrapper {
+    position: relative; /* Maintains relative positioning */
+}
+
+.dropdown-wrapper:hover .dropdown-menu { /* Target nested menu on hover */
+    display: block; /* Show menu on hover */
+    transition-delay: 0s; /* Remove hover delay for smooth animation */
+}
+
+.dropdown-wrapper:hover .dropdown-menu.show { /* Maintain show state */
+    transition-delay: 0s; /* Prevent flickering on subsequent hovers */
+}

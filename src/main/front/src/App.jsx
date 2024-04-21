@@ -4,7 +4,8 @@ import {Link} from "react-router-dom";
 function App() {
   return (
     <div className="App">
-        <Link to="/company">기업 메인</Link>
+      <Link to="/company">기업 메인</Link>
+
     </div>
   );
 }

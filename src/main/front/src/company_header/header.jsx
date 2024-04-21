@@ -4,21 +4,20 @@ import "./header.css";
 import '@fontsource/zen-tokyo-zoo';
 import Category from "./category";
 import SideMenu from "./sidemenu";
+import MessageTab from "./message-tab";
 function Header() {
     return(
         <div>
             <div className="header">
                 <div className="logo">
-                    <button className="bringup">
+                    <a className="bringup" href="/company">
                         <span className="bringup-span1" style={{fontFamily: 'Zen Tokyo Zoo, cursive'}}>Bring</span>
                         <span className="bringup-span2" style={{fontFamily: 'Zen Tokyo Zoo, cursive'}}>UP</span>
-                    </button>
+                    </a>
                 </div>
                 <Category/>
                 <div className="interface">
-                    <button className="message">
-                        <RxEnvelopeClosed size={48}/>
-                    </button>
+                    <MessageTab/>
                     <SideMenu/>
                 </div>
             </div>

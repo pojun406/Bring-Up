@@ -13,18 +13,38 @@ function Category() {
     };
 
     const handleItemClick = (event) => {
-        event.stopPropagation(); // 부모 요소의 클릭 이벤트가 발생하지 않도록 이벤트 전파 중단
-        // 클릭된 요소가 a 태그인 경우에만 드롭다운 메뉴가 닫히도록 설정
+        event.stopPropagation();
         if (event.target.tagName === "A") {
             setOpenIndex(null);
         }
     };
 
     const categories = [
-        { label: "공고", options: ["공고 관리", "공고 등록"] },
-        { label: "상품", options: ["상품 관리", "프리미엄 공고", "광고 배너", "이력서 열람"] },
-        { label: "리뷰 관리", options: ["기업 리뷰", "면접 리뷰"] },
-        { label: "인재 추천", options: [] },
+        {
+            label: "공고", options: [
+                {label: "공고 관리", href: "manage-announcements"},
+                {label: "공고 등록", href: "create-announcement"},
+            ],
+        },
+        {
+            label: "상품", options: [
+                {label: "상품 관리", href: "manage-products"},
+                {label: "프리미엄 공고", href: "premium-announcements"},
+                {label: "광고 배너", href: "advertising-banners"},
+                {label: "이력서 열람", href: "view-resumes"},
+            ],
+        },
+        {
+            label: "리뷰 관리", options: [
+                {label: "기업 리뷰", href: "manage-company-reviews"},
+                {label: "면접 리뷰", href: "manage-interview-reviews"},
+            ],
+        },
+        {
+            label: "인재 추천", options: [
+                {label: "인재 추천", href: "recommendation"},
+            ],
+        },
     ];
 
     return (
@@ -42,15 +62,15 @@ function Category() {
                         <ul
                             className="dropdown-menu"
                             ref={(el) => (dropdownRefs.current[index] = el)}
-                            onMouseEnter={() => handleMouseEnter(index)} // 드롭다운 메뉴에 마우스가 들어가도 드롭다운을 유지
                             onMouseLeave={handleMouseLeave}
+                            onClick={handleItemClick}
                         >
                             {category.options.map((option, optionIndex) => (
-                                <li key={optionIndex}>
-                                    <a className="dropdown-item" href="#">
-                                        {option}
-                                    </a>
-                                </li>
+                                <a className="dropdown-item" href={`/company/${option.href}`}>
+                                    <li key={optionIndex} onClick={handleItemClick}>
+                                        {option.label}
+                                    </li>
+                                </a>
                             ))}
                         </ul>
                     )}
@@ -59,5 +79,4 @@ function Category() {
         </div>
     );
 }
-
 export default Category;
