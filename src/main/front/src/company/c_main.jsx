@@ -2,8 +2,7 @@ import React from 'react';
 import Header from "./header/header";
 import "./c_main.css";
 
-
-const c_main = () => {
+function c_main() {
     return (
         <div className="main">
             <Header />
@@ -13,6 +12,6 @@ const c_main = () => {
             </div>
         </div>
     );
-};
+}
 
 export default c_main;

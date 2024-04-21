@@ -3,10 +3,8 @@ import { RxHamburgerMenu, RxEnvelopeClosed  } from "react-icons/rx";
 import "./header.css";
 import '@fontsource/zen-tokyo-zoo';
 import Category from "./category";
-
-
-
-const Header = () =>{
+import SideMenu from "./sidemenu";
+function Header() {
     return(
         <div>
             <div className="header">
@@ -21,14 +19,12 @@ const Header = () =>{
                     <button className="message">
                         <RxEnvelopeClosed size={48}/>
                     </button>
-                    <button className="menu">
-                        <RxHamburgerMenu  size={48}/>
-                    </button>
+                    <SideMenu/>
                 </div>
             </div>
             <hr className="line" />
         </div>
-)
+    );
 }
 
 export default Header;

@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./category.css";
-
-const Category = () => {
+function Category() {
     const dropdownRefs = useRef(Array(4).fill(null));
     const [openIndex, setOpenIndex] = useState(null);
 
@@ -22,10 +21,10 @@ const Category = () => {
     };
 
     const categories = [
-        { label: "공고", options: ["옵션 1", "옵션 2", "옵션 3"] },
-        { label: "상품", options: ["옵션 1", "옵션 2", "옵션 3"] },
-        { label: "리뷰 관리", options: ["옵션 1", "옵션 2", "옵션 3"] },
-        { label: "인재 추천", options: ["옵션 1", "옵션 2", "옵션 3"] },
+        { label: "공고", options: ["공고 관리", "공고 등록"] },
+        { label: "상품", options: ["상품 관리", "프리미엄 공고", "광고 배너", "이력서 열람"] },
+        { label: "리뷰 관리", options: ["기업 리뷰", "면접 리뷰"] },
+        { label: "인재 추천", options: [] },
     ];
 
     return (
@@ -59,6 +58,6 @@ const Category = () => {
             ))}
         </div>
     );
-};
+}
 
 export default Category;
