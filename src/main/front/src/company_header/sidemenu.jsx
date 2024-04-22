@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 import './sidemenu.css';
 import {RxHamburgerMenu} from "react-icons/rx";
 import { IoPersonCircleOutline } from "react-icons/io5";
-import Details from "../company/details/details";
+import {useNavigate} from "react-router-dom";
 
 function SideMenu(){
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleMenuToggle = () => {
         setIsOpen(!isOpen);
     };
+    const logout=() =>{
+        /*로그아웃 로직*/
+        navigate("/login");
+    }
 
     return (
         <>
@@ -33,7 +38,7 @@ function SideMenu(){
                             <li>신고내역</li>
                         </a>
                     </ul>
-                    <button className="logout-button">로그아웃</button>
+                    <button className="logout-button" onClick={logout}>로그아웃</button>
                 </nav>
             </div>
         </>

@@ -15,12 +15,14 @@ import Details from "./company/details/details";
 import ModifyingInformation from "./company/modifying-information/modifying-information";
 import Payment from "./company/payment/payment";
 import Report from "./company/report/report";
+import Login from "./login/login";
 
 const Root = () => {
     return (
         <Router>
             <Routes>
                 <Route path="/" element={<App />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/company" element={<Company />} />
                 <Route path="/company/manage-announcements" element={<ManageAnnouncements />} />
                 <Route path="/company/advertising-banners" element={<AdvertisingBanners />} />

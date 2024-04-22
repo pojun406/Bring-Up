@@ -5,6 +5,9 @@ function Category() {
     const [openIndex, setOpenIndex] = useState(null);
 
     const handleMouseEnter = (index) => {
+        if(openIndex!==null){
+            setOpenIndex(null);
+        }
         setOpenIndex(index);
     };
 
@@ -53,7 +56,7 @@ function Category() {
                 <div
                     key={index}
                     className="dropdown-wrapper"
-                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseEnter={()=>handleMouseEnter(index)}
                     onMouseLeave={handleMouseLeave}
                     onClick={handleItemClick}
                 >
@@ -62,7 +65,6 @@ function Category() {
                         <ul
                             className="dropdown-menu"
                             ref={(el) => (dropdownRefs.current[index] = el)}
-                            onMouseLeave={handleMouseLeave}
                             onClick={handleItemClick}
                         >
                             {category.options.map((option, optionIndex) => (
