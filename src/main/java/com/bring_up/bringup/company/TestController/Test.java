@@ -1,4 +1,4 @@
-package com.bring_up.bringup.TestController;
+package com.bring_up.bringup.company.TestController;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
