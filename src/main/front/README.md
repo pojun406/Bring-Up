@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+## Thank you for purchasing our item ##
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Once you have downloaded the package, after template extracting, you will see the following files & directory structure:
 
-## Available Scripts
+```
+template/
+  ├──  assets
+  │   ├──  css/
+  │   ├──  images/
+  │   ├──  js/
+  │   ├──  scss/
+  │   └──  vendor/
+  ├──  docs
+  │   ├──  index.html 
+  └── All template HTML files
+gulpfile.js
+package.JSON
+package-lock.JSON
+README.MD
+```
 
-In the project directory, you can run:
+#### Templates and Assets
 
-### `npm start`
+The `template` directory contains all the template files and static resources. To view, just open `.html` in your favorite browser!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Gulpfile.js
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+We've included an optional Gulp file to help you get started with theme customization. You’ll need to install Node.js and Gulp before using our included gulpfile.js.
 
-### `npm test`
+To install Node visit [https://nodejs.org/download](https://nodejs.org/download/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To install gulp, run the following command:
 
-### `npm run build`
+```
+$ npm install gulp -g
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When you’re done, install the rest of the theme's dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+$ npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+From here, simply run `gulp` from your terminal and you're good to go!
 
-### `npm run eject`
++ `gulp` - recompiles your theme assets.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Support
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you stuck with any issues or need help/have queries, Please read our documentation included in the package. If you are still not finding any solution, Kindly head over to our [support forum](https://support.webestica.com) and we will be getting in touch with you ASAP.

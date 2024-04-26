@@ -1,43 +1,22 @@
 {
-  "name": "front",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@fontsource/zen-tokyo-zoo": "^5.0.12",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.6.8",
-    "http-proxy-middleware": "^3.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.1.0",
-    "react-router-dom": "^6.22.3",
-    "react-scripts": "^3.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "blogzine",
+  "version": "1.3.1",
+  "description": "blog and magazine bootstrap 5 theme",
+  "main": "gulpfile.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "webestica",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-rtlcss": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.69.2"
   }
 }
