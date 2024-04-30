@@ -5,6 +5,5 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
 public class CompanyJoin {
 }
