@@ -444,7 +444,7 @@ Header END -->
 							<!-- Email -->
 							<div class="mb-3">
 								<label class="form-label" for="exampleInputEmail1">Email address</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
+								<input type="text" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
 							</div>
 							<!-- Password -->
 							<div class="mb-3">
@@ -488,8 +488,8 @@ Header END -->
 		const companyLoginBtn = document.getElementById('companyLoginBtn');
 
 		// Change action attribute of the form to company login endpoint
-		loginForm.action = "https://localhost:8080/api/login"; // Change this to actual endpoint for company login
-
+		// loginForm.action = "https://localhost:8080/api/login"; // Change this to actual endpoint for company login
+		loginForm.action = "/company/company_main.html"; // Change this to actual endpoint for company login
 		// Change the text and action of login button to reflect company login
 		loginBtn.textContent = 'Company Login';
 		loginBtn.classList.remove('btn-success');
