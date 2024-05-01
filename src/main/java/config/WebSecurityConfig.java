@@ -30,6 +30,31 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class WebSecurityConfig {
 
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+
+    @Bean
+    protected SecurityFilterChain configure(HttpSecurity httpSecurity) throws Exception{
+        httpSecurity
+                .cors(cors -> cors
+                        .configurationSource(corsConfigurationSource())
+                )
+                .csrf(CsrfConfigurer::disable)
+                .httpBasic(HttpBasicConfigurer::disable)
+                .sessionManagement(sessionManagement -> sessionManagement
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                )
+                .authorizeHttpRequests(request -> request
+                        .requestMatchers("/", "/api/v1/auth/**", "/api/v1/search/**", "/file/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/board/**", "/api/v1/user/*").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .exceptionHandling(exceptoinHandling -> exceptoinHandling
+                        .authenticationEntryPoint(new FailedAuthenticationEntryPoint())
+                )
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return httpSecurity.build();
+    }
     @Bean
     protected CorsConfigurationSource corsConfigurationSource(){
 
