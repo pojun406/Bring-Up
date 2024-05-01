@@ -1,5 +1,6 @@
 package provider;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.Value;
 import org.springframework.stereotype.Component;
@@ -23,5 +24,17 @@ public class JwtProvider {
                 .compact();
         //setSubject: 주체 setIssuedAt: 생성시간 setExpiration: 만료 시간
         return jwt;
+    }
+    public String validate(String jwt){
+        Claims claims = null;
+
+        try {
+            claims = Jwts.parser().setSigningKey(secretKey)
+                    .parseClaimsJws(jwt).getBody();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        return claims.getSubject();
     }
 }
