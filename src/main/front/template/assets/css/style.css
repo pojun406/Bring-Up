@@ -17519,9 +17519,6 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
 [data-bs-theme=dark] .light-mode-item {
   display: none !important;
 }
-
-/*User CSS*/
-/* 노멀라이즈 시작 */
 body, ul, li {
   margin: 0;
   padding: 0;
@@ -17678,8 +17675,8 @@ body {
 .side-bar:hover {
   transform: translate(-20px, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
 }
-/* 사이드바 끝 */
 
-/* 커스텀 끝 */
-출처: https://me-in-journey.com/entry/HTMLCSS-사이드바-메뉴-만들기-나타나는-2차-메뉴-만들기-feat-transform-translate [내 코딩 여정:티스토리]
+
+/*User CSS*/
+
 /*# sourceMappingURL=style.css.map */
