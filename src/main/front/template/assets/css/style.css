@@ -17519,6 +17519,28 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
 [data-bs-theme=dark] .light-mode-item {
   display: none !important;
 }
+/* 제목 "BringUp" 스타일 */
+.title {
+  color: #516DFF; /* Bring의 색상 */
+  font-family: "Zen Tokyo Zoo", system-ui;
+  font-weight: 20;
+  font-style: normal;
+  top: 20px; /* 위에서의 간격 */
+  left: 50%; /* 가운데 정렬 */
+  transform: translateX(-50%); /* 가운데 정렬 */
+  font-size: 24px; /* 제목의 폰트 크기 */
+}
 
+/* "Up" 스타일 */
+.up {
+  color: #7A4BFF; /* Up의 색상 */
+  font-family: "Zen Tokyo Zoo", system-ui;
+  font-weight: 20;
+  font-style: normal;
+  top: 20px; /* 위에서의 간격 */
+  left: 50%; /* 가운데 정렬 */
+  transform: translateX(-50%); /* 가운데 정렬 */
+  font-size: 24px; /* 제목의 폰트 크기 */
+}
 /*User CSS*/
 /*# sourceMappingURL=style.css.map */
