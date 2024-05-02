@@ -488,7 +488,7 @@ Header END -->
 		const companyLoginBtn = document.getElementById('companyLoginBtn');
 
 		// Change action attribute of the form to company login endpoint
-		loginForm.action = "https://localhost:8080/api/login"; // Change this to actual endpoint for company login
+		loginForm.action = "/login"; // Change this to actual endpoint for company login
 
 		// Change the text and action of login button to reflect company login
 		loginBtn.textContent = 'Company Login';
@@ -498,7 +498,34 @@ Header END -->
 		// Change the link to company main page
 		const companyMainLink = document.querySelector('.btn.btn-sm.btn-danger.mb-0.mx-2');
 		companyMainLink.href = "/company/company_main.html"; // Change this to actual URL for company main page
+
+		// Add event listener to form submit
+		loginForm.addEventListener('submit', function(event) {
+			event.preventDefault(); // Prevent default form submission
+
+			// Get input values
+			const id = document.getElementById('exampleInputEmail1').value;
+			const pw = document.getElementById('exampleInputPassword1').value;
+
+			// Send AJAX request to login endpoint
+			fetch('/api/login?id=' + id + '&pw=' + pw)
+					.then(response => {
+						if (response.ok) {
+							// If login is successful, redirect to company main page
+							window.location.href = response.url;
+						} else {
+							// If login fails, display error message
+							return response.text().then(errorMessage => {
+								alert(errorMessage);
+							});
+						}
+					})
+					.catch(error => {
+						console.error('Error:', error);
+					});
+		});
 	}
+
 
 	// Function to switch to personal login form
 	function switchToPersonalLogin() {

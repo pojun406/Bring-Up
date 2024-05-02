@@ -12,6 +12,7 @@
     "browser-sync": "^2.29.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-connect": "^5.7.0",
     "gulp-if": "^3.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-rtlcss": "^2.0.0",

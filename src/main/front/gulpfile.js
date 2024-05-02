@@ -1,5 +1,4 @@
 'use strict';
-
 var gulp          = require('gulp');
 var sass          = require('gulp-sass')(require('sass'));
 var browserSync   = require('browser-sync').create();
@@ -39,10 +38,11 @@ gulp.task('sass', function() {
 });
 
 
-// Static Server
+
 gulp.task('serve', function(done) {
     browserSync.init({
-      server: Paths.TEMPLATE
+        proxy: 'http://localhost:8080', // 스프링 부트 서버의 주소로 변경
+        port: 3000 // BrowserSync가 사용할 포트
     });
     done();
 });
