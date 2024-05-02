@@ -37,13 +37,10 @@ gulp.task('sass', function() {
       .pipe(gulp.dest(Paths.CSS))
       .pipe(browserSync.stream());
 });
-
-
-
 gulp.task('serve', function(done) {
     browserSync.init({
-        proxy: 'http://localhost:8080', // 스프링 부트 서버의 주소로 변경
-        port: 3000
+        server: Paths.TEMPLATE,
+        port:8080
     });
     done();
 });

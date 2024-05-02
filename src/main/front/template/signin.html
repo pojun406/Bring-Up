@@ -488,7 +488,7 @@ Header END -->
 		const companyLoginBtn = document.getElementById('companyLoginBtn');
 
 		// Change action attribute of the form to company login endpoint
-		loginForm.action = "/api/login"; // Change this to actual endpoint for company login
+		loginForm.action = "http://localhost:8080/api/login"; // Change this to actual endpoint for company login
 
 		// Change the text and action of login button to reflect company login
 		loginBtn.textContent = 'Company Login';
@@ -502,20 +502,22 @@ Header END -->
 		// Add event listener to form submit
 		loginForm.addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent default form submission
+			console.log("^^^^^^");
 
 			// Get input values
 			const id = document.getElementById('exampleInputEmail1').value;
 			const pw = document.getElementById('exampleInputPassword1').value;
-
+			console.log(id,pw);
 			// Send AJAX request to login endpoint
-			fetch('/api/login?id=' + id + '&pw=' + pw)
+			fetch('http://localhost:8080/api/login?id=' + id + '&pw=' + pw)
 					.then(response => {
 						if (response.ok) {
-							// If login is successful, redirect to company main page
+							console.log("222");
 							window.location.href = response.url;
 						} else {
 							// If login fails, display error message
 							return response.text().then(errorMessage => {
+								console.log("444");
 								alert(errorMessage);
 							});
 						}

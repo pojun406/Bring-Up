@@ -9,7 +9,8 @@ public class corsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry corsRegistry) {
         corsRegistry
                 .addMapping("/**")
-                .allowedMethods("*")
-                .allowedOrigins("*");
+                .allowedMethods("GET", "POST") // 원하는 HTTP 메서드로 변경
+                .allowedOrigins("http://localhost:8080"); // 원하는 출처로 변경
     }
+
 }
