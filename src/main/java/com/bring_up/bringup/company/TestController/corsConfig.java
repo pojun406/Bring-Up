@@ -1,4 +1,4 @@
-package com.bring_up.bringup.company.TestController;
+/*package com.bring_up.bringup.company.TestController;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -13,4 +13,4 @@ public class corsConfig implements WebMvcConfigurer {
                 .allowedOrigins("http://localhost:8080"); // 원하는 출처로 변경
     }
 
-}
+}*/
