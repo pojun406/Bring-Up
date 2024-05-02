@@ -7,6 +7,7 @@ var autoprefixer  = require('gulp-autoprefixer');
 var rename        = require('gulp-rename');
 var rtlcss        = require('gulp-rtlcss');
 var gulpif        = require('gulp-if');
+const {template} = require("browser-sync/dist/config");
 
 var enableRTL     = false; // TODO: RTL CSS will be only generated if this is TRUE
 
@@ -42,7 +43,7 @@ gulp.task('sass', function() {
 gulp.task('serve', function(done) {
     browserSync.init({
         proxy: 'http://localhost:8080', // 스프링 부트 서버의 주소로 변경
-        port: 3000 // BrowserSync가 사용할 포트
+        port: 3000
     });
     done();
 });
@@ -55,4 +56,4 @@ gulp.task('watch', function(done) {
     done();
 });
 
-gulp.task('default', gulp.series('sass', 'serve', 'watch'));
+gulp.task('default', gulp.series('sass','serve', 'watch'));
