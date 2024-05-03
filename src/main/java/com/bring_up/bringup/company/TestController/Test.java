@@ -12,7 +12,7 @@ public class Test {
     private Logger log = LoggerFactory.getLogger(getClass());
 
     @GetMapping("/")
-    public String hello(Model model){
+    public String index(Model model){
         return "index";
     }
 
