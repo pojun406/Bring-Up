@@ -38,5 +38,5 @@ out/
 
 ### 제외 ###
 /**/node_modules
-/node_modules/.bin
 /node_modules
+node_modules
