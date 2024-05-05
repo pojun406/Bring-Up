@@ -509,18 +509,19 @@ Header END -->
 			const pw = document.getElementById('exampleInputPassword1').value;
 			console.log(id,pw);
 			// Send AJAX request to login endpoint
-			fetch('/api/login?id=' + id + '&pw=' + pw)
+			fetch("http://localhost:3000/api/login?id="+id+"&pw="+pw, {
+				method: 'POST'
+			})
 					.then(response => {
 						if (response.ok) {
-							console.log("222");
-							window.location.href = response.url;
+							return response.json();
 						} else {
-							// If login fails, display error message
-							return response.text().then(errorMessage => {
-								console.log("444");
-								alert(errorMessage);
-							});
+							throw new Error('Login failed');
 						}
+					})
+					.then(data => {
+						console.log(data.message);
+						window.location.href = "/company/main.html";
 					})
 					.catch(error => {
 						console.error('Error:', error);

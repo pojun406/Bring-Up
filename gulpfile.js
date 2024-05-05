@@ -14,10 +14,10 @@ var enableRTL     = false; // TODO: RTL CSS will be only generated if this is TR
 
 var Paths = {
     TEMPLATE: './templates',
-    SCSS: 'static/assets/scss/**/*.scss',
-    CSS: 'static/assets/css/',
-    JS: 'static/**/*.js',
-    HTML: 'templates/**/*.html'
+    SCSS: '/static/assets/scss/**/*.scss',
+    CSS: '/static/assets/css/',
+    JS: '/static/**/*.js',
+    HTML: '/static/**/*.html'
 }
 
 // Compile sass into CSS
