@@ -1,21 +1,25 @@
 package com.bring_up.bringup.company.TestController;
 
-import org.springframework.ui.Model;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
+@RequestMapping("/api")
 public class Test {
-
-    @GetMapping("/api/hello")
-    public String test() {
-        return "Hello, world!";
-    }
-
-    @PostMapping("/api/login")
-    public String loginTest(@RequestParam("id") String id, @RequestParam("password") String password){
-        if(id.equals("admin") && password.equals("password"))
-            return "ok";
-        else
-            return "false";
+    @PostMapping("/login")
+    public ResponseEntity<Map<String, String>> login(@RequestParam String id, @RequestParam String pw) {
+        // 로그인 로직 수행
+        if ("admin".equals(id) && "1234".equals(pw)) {
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "Login successful");
+            return ResponseEntity.ok(response);
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
     }
 }
