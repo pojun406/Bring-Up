@@ -38,6 +38,7 @@
   @include border-radius(var(--#{$prefix}card-border-radius));
   @include box-shadow(var(--#{$prefix}card-box-shadow));
 
+
   > hr {
     margin-right: 0;
     margin-left: 0;

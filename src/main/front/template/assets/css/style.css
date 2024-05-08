@@ -8585,7 +8585,18 @@ textarea.form-control-lg {
   -webkit-box-flex: 1 !important;
       -ms-flex-positive: 1 !important;
           flex-grow: 1 !important;
+  transition: margin-left 0.5s ease;
+
+
 }
+
+.col-xl-4 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 20%;
+}
+
 
 .flex-shrink-0 {
   -ms-flex-negative: 0 !important;
@@ -8980,7 +8991,8 @@ textarea.form-control-lg {
 }
 
 .ms-3 {
-  margin-left: 1rem !important;
+text-align: center;
+
 }
 
 .ms-4 {
@@ -17527,6 +17539,19 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
 }
 [data-bs-theme=dark] .light-mode-item {
   display: none !important;
+}
+.naver-img{
+  width: 30%;
+  height: 50%;
+
+}
+.login-text{
+  color: Blue; /* Neon Blue */
+  text-align: center;
+}
+.name{
+  color: Blue;
+
 }
 
 /*User CSS*/

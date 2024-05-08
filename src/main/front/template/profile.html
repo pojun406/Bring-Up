@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/side-styles.css">
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -94,66 +95,101 @@
 <!-- Left sidebar START -->
     <!-- =======================
 Main contain START -->
-<body class="d-flex">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <body class="d-flex expanded-sidebar">
 
-<aside class="side-bar">
-    <section class="side-bar__icon-box">
-        <section class="side-bar__icon-1">
-            <div></div>
-            <div></div>
-            <div></div>
-        </section>
-    </section>
-    <ul>
-        <li>
-            <a href="#"><i class="fa-solid fa-cat"></i> menu1</a>
-            <ul>
-                <li><a href="#">text1</a></li>
-                <li><a href="#">text2</a></li>
-                <li><a href="#">text3</a></li>
-                <li><a href="#">text4</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">menu2</a>
-            <ul>
-                <li><a href="#">text1</a></li>
-                <li><a href="#">text2</a></li>
-                <li><a href="#">text3</a></li>
-                <li><a href="#">text4</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">menu3</a>
-            <ul>
-                <li><a href="#">text1</a></li>
-                <li><a href="#">text2</a></li>
-                <li><a href="#">text3</a></li>
-                <li><a href="#">text4</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">menu4</a>
-            <ul>
-                <li><a href="#">text1</a></li>
-                <li><a href="#">text2</a></li>
-                <li><a href="#">text3</a></li>
-                <li><a href="#">text4</a></li>
-            </ul>
-        </li>
-    </ul>
-</aside>
+<div class="l-navbar" id="navbar">
+    <nav class="nav">
+        <div>
+            <div class="nav__brand">
+                <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                <a href="#" class="nav__logo">BringUp</a>
+            </div>
+            <div class="nav__list">
+                <a href="#" class="nav__link active">
+                    <ion-icon name="home-outline" class="nav__icon"></ion-icon>
+                    <span class="nav_name">마이 홈</span>
+                </a>
+                <a href="#" class="nav__link">
+                    <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
+                    <span class="nav_name">자소서/이력서</span>
+                </a>
 
-<main class="flex-grow-1">   <!-- Categories START -->
+                <div href="#" class="nav__link collapse">
+                    <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
+                    <span class="nav_name"></span>
+
+                    <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+
+                    <ul class="collapse__menu">
+                        <a href="#" class="collapse__sublink">Data</a>
+                        <a href="#" class="collapse__sublink">Group</a>
+                        <a href="#" class="collapse__sublink">Members</a>
+                    </ul>
+                </div>
+
+                <a href="#" class="nav__link">
+                    <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon>
+                    <span class="nav_name">스크랩/관심기업</span>
+                </a>
+
+                <div href="#" class="nav__link collapse">
+                    <ion-icon name="people-outline" class="nav__icon"></ion-icon>
+                    <span class="nav_name">Team</span>
+
+                    <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+
+                    <ul class="collapse__menu">
+                        <a href="#" class="collapse__sublink">Data</a>
+                        <a href="#" class="collapse__sublink">Group</a>
+                        <a href="#" class="collapse__sublink">Members</a>
+                    </ul>
+                </div>
+
+                <a href="#" class="nav__link">
+                    <ion-icon name="settings-outline" class="nav__icon"></ion-icon>
+                    <span class="nav_name">지원할 만할 공고</span>
+                </a>
+            </div>
+            <a href="#" class="nav__link">
+                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">받은 제안</span>
+            </a>
+            <a href="#" class="nav__link">
+                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">지원 내역</span>
+            </a>
+            <a href="#" class="nav__link">
+                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">로그아웃</span>
+            </a>
+        </div>
+    </nav>
+</div>
+<main class="flex-grow-1">
+    <div class="container">
+        <div class="row align-items-center justify-content-end"> <!-- 오른쪽으로 정렬 -->
+            <div class="col-md-6 col-xl-3 text-center d-flex align-items-center">
+                <h3 class="name mx-2">홍길동님!!</h3>환영합니다!
+
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="card card-body bg-success bg-opacity-10 p-4 h-100">
+                    <img class="naver-img" src="images/naver.jpg" alt="profile" style="opacity: 0.5;">
+                    <p class="login-text">네이버 로그인 중</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Categories START -->
     <section class="py-4">
         <div class="container">
             <div class="row pb-4">
                 <div class="col-12">
                     <!-- Title -->
                     <div class="d-sm-flex justify-content-sm-between align-items-center">
-                        <h1 class="mb-2 mb-sm-0 h2">Categories <span class="badge bg-primary bg-opacity-10 text-primary">07</span></h1>
-                        <a href="#" class="btn btn-sm btn-primary mb-0"><i class="fas fa-plus me-2"></i>Add new category</a>
+                        <h1 class="mb-2 mb-sm-0 h2">마이페이지<span class="badge bg-primary bg-opacity-10 text-primary"></span></h1>
+
                     </div>
                 </div>
             </div>
@@ -164,8 +200,8 @@ Main contain START -->
                         <!-- Card header -->
                         <div class="card-header border-bottom p-3">
                             <div class="d-flex align-items-center">
-                                <div class="icon-lg shadow bg-body rounded-circle">⛰️</div>
-                                <h3 class="mb-0 ms-3">Travel</h3>
+
+                                <h3 class="mb-0 ms-3">개인정보</h3>
                             </div>
                         </div>
 
@@ -201,8 +237,43 @@ Main contain START -->
                         <!-- Card header -->
                         <div class="card-header border-bottom p-3">
                             <div class="d-flex align-items-center">
-                                <div class="icon-lg shadow bg-body rounded-circle">🩸</div>
-                                <h3 class="mb-0 ms-3">Lifestyle</h3>
+
+                                <h3 class="mb-0 ms-3">이력서</h3>
+
+                            </div>
+                        </div>
+
+                        <!-- Card body START -->
+                        <div class="card-body p-3">
+                            <!-- Followers and Post -->
+                            <div class="d-flex justify-content-between">
+                                <!-- Total post -->
+                                <div>
+                                    <img class="avatar-img" src="images/resume.png" alt="profile">
+                                </div>
+                                <!-- Avatar group -->
+                            </div>
+
+                        </div>
+                        <!-- Card body END -->
+
+                        <!-- Card footer -->
+                        <div class="card-footer border-top text-center p-3">
+                            <a href="#" class="btn btn-primary-soft w-100 mb-0">View posts</a>
+                        </div>
+                    </div>
+                    <!-- Category item END -->
+                </div>
+
+                <div class="col-md-6 col-xl-4">
+                    <!-- Category item START -->
+                    <div class="card border h-100">
+                        <!-- Card header -->
+                        <div class="card-header border-bottom p-3">
+                            <div class="d-flex align-items-center">
+
+                                <h3 class="mb-0 ms-3">자소서(AI)</h3>
+
                             </div>
                         </div>
 
@@ -214,7 +285,43 @@ Main contain START -->
                             <div class="d-flex justify-content-between">
                                 <!-- Total post -->
                                 <div>
+                                    <img class="avatar-img" src="images/ai.png" alt="profile">
+                                </div>
+                                <!-- Avatar group -->
+                            </div>
 
+                        </div>
+                        <!-- Card body END -->
+
+                        <!-- Card footer -->
+                        <div class="card-footer border-top text-center p-3">
+                            <a href="#" class="btn btn-primary-soft w-100 mb-0">View posts</a>
+                        </div>
+                    </div>
+                    <!-- Category item END -->
+                </div>
+
+                <div class="col-md-6 col-xl-4">
+                    <!-- Category item START -->
+                    <div class="card border h-100">
+                        <!-- Card header -->
+                        <div class="card-header border-bottom p-3">
+                            <div class="d-flex align-items-center">
+
+                                <h3 class="mb-0 ms-3">간편 정보 카드</h3>
+
+                            </div>
+                        </div>
+
+                        <!-- Card body START -->
+                        <div class="card-body p-3">
+
+
+                            <!-- Followers and Post -->
+                            <div class="d-flex justify-content-between">
+                                <!-- Total post -->
+                                <div>
+                                    <img class="avatar-img" src="images/card.png" alt="profile">
                                 </div>
 
                                 <!-- Avatar group -->
@@ -238,8 +345,8 @@ Main contain START -->
                         <!-- Card header -->
                         <div class="card-header border-bottom p-3">
                             <div class="d-flex align-items-center">
-                                <div class="icon-lg shadow bg-body rounded-circle">🤝</div>
-                                <h3 class="mb-0 ms-3">Business</h3>
+
+                                <h3 class="mb-0 ms-3">프리랜서 모집</h3>
                             </div>
                         </div>
 
@@ -251,7 +358,7 @@ Main contain START -->
                             <div class="d-flex justify-content-between">
                                 <!-- Total post -->
                                 <div>
-
+                                    <img class="avatar-img" src="images/freelancer.png" alt="profile">
                                 </div>
 
                                 <!-- Avatar group -->
@@ -275,8 +382,8 @@ Main contain START -->
                         <!-- Card header -->
                         <div class="card-header border-bottom p-3">
                             <div class="d-flex align-items-center">
-                                <div class="icon-lg shadow bg-body rounded-circle">🤖</div>
-                                <h3 class="mb-0 ms-3">Technology</h3>
+
+                                <h3 class="mb-0 ms-3">예전에 본 공고</h3>
                             </div>
                         </div>
 
@@ -288,7 +395,7 @@ Main contain START -->
                             <div class="d-flex justify-content-between">
                                 <!-- Total post -->
                                 <div>
-
+                                    <img class="avatar-img" src="images/saw-notice.png" alt="profile">
                                 </div>
 
                                 <!-- Avatar group -->
@@ -312,8 +419,8 @@ Main contain START -->
                         <!-- Card header -->
                         <div class="card-header border-bottom p-3">
                             <div class="d-flex align-items-center">
-                                <div class="icon-lg shadow bg-body rounded-circle">🔥</div>
-                                <h3 class="mb-0 ms-3">Marketing</h3>
+
+                                <h3 class="mb-0 ms-3">받은 제안</h3>
                             </div>
                         </div>
 
@@ -325,7 +432,7 @@ Main contain START -->
                             <div class="d-flex justify-content-between">
                                 <!-- Total post -->
                                 <div>
-
+                                    <img class="avatar-img" src="images/suggest.png" alt="profile">
                                 </div>
 
                                 <!-- Avatar group -->
@@ -352,8 +459,8 @@ Main contain START -->
                         <!-- Card header -->
                         <div class="card-header border-bottom p-3">
                             <div class="d-flex align-items-center">
-                                <div class="icon-lg shadow bg-body rounded-circle">📷</div>
-                                <h3 class="mb-0 ms-3">Photography</h3>
+
+                                <h3 class="mb-0 ms-3">지원 이력</h3>
                             </div>
                         </div>
 
@@ -366,7 +473,7 @@ Main contain START -->
                             <div class="d-flex justify-content-between">
                                 <!-- Total post -->
                                 <div>
-
+                                    <img class="avatar-img" src="images/past-resume.png" alt="profile">
 
                                 </div>
 
@@ -383,6 +490,84 @@ Main contain START -->
                         </div>
                     </div>
                     <!-- Category item END -->
+                </div>
+                <div class="col-md-6 col-xl-4">
+                    <!-- Category item START -->
+                    <div class="card border h-100">
+                        <!-- Card header -->
+                        <div class="card-header border-bottom p-3">
+                            <div class="d-flex align-items-center">
+
+                                <h3 class="mb-0 ms-3">관심 기업</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card body START -->
+                        <div class="card-body p-3">
+
+
+
+                            <!-- Followers and Post -->
+                            <div class="d-flex justify-content-between">
+                                <!-- Total post -->
+                                <div>
+                                    <img class="avatar-img" src="images/interest-company.png" alt="profile">
+
+                                </div>
+
+                                <!-- Avatar group -->
+
+                            </div>
+
+                        </div>
+                        <!-- Card body END -->
+
+                        <!-- Card footer -->
+                        <div class="card-footer border-top text-center p-3">
+                            <a href="#" class="btn btn-primary-soft w-100 mb-0">View posts</a>
+                        </div>
+                    </div>
+                    <!-- Category item END -->
+
+                </div>
+                <div class="col-md-6 col-xl-4">
+                    <!-- Category item START -->
+                    <div class="card border h-100">
+                        <!-- Card header -->
+                        <div class="card-header border-bottom p-3">
+                            <div class="d-flex align-items-center">
+
+                                <h3 class="mb-0 ms-3">AI 기업 매칭</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card body START -->
+                        <div class="card-body p-3">
+
+
+
+                            <!-- Followers and Post -->
+                            <div class="d-flex justify-content-between">
+                                <!-- Total post -->
+                                <div>
+                                    <img class="avatar-img" src="images/past-resume.png" alt="profile">
+
+                                </div>
+
+                                <!-- Avatar group -->
+
+                            </div>
+
+                        </div>
+                        <!-- Card body END -->
+
+                        <!-- Card footer -->
+                        <div class="card-footer border-top text-center p-3">
+                            <a href="#" class="btn btn-primary-soft w-100 mb-0">View posts</a>
+                        </div>
+                    </div>
+                    <!-- Category item END -->
+
                 </div>
 
 
@@ -416,6 +601,10 @@ JS libraries, plugins and custom scripts -->
 
 <!-- Template Functions -->
 <script src="assets/js/functions.js"></script>
+<!-- IONICONS -->
+<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+<!-- JS -->
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
