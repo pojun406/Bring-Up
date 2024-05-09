@@ -3,11 +3,14 @@ package com.bring_up.bringup.company.Service;
 import com.bring_up.bringup.company.Entity.Company;
 import com.bring_up.bringup.company.Repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import provider.JwtProvider;
 
 @Service
+@ComponentScan(basePackages={"config"})
+@ComponentScan(basePackages={"provider"})
 public class UserService {
     @Autowired
     private CompanyRepository companyRepository;

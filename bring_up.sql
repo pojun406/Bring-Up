@@ -1,3 +1,5 @@
+USE bring_up;
+
 CREATE TABLE company
 (
   manageremail       VARCHAR(255) NOT NULL COMMENT '담당자 이메일',
