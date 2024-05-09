@@ -1,4 +1,4 @@
-package com.bring_up.bringup.company.member.login;
+package com.bring_up.bringup.company.login;
 
 import org.springframework.stereotype.Repository;
 
