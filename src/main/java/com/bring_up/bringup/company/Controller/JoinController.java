@@ -1,7 +1,7 @@
-package com.bring_up.bringup.company.Controller;
+/*package com.bring_up.bringup.company.Controller;
 
-import com.bring_up.bringup.company.Entity.company;
-import com.bring_up.bringup.company.Service.JoinService;
+import com.bring_up.bringup.company.Entity.Company;
+import com.bring_up.bringup.company.Service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,18 +9,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class JoinController {
-    private final JoinService joinService;
+    private final UserService userService;
 
-    public JoinController(JoinService joinService) {
-        this.joinService = joinService;
+    public JoinController(UserService userService) {
+        this.userService = userService;
     }
 
     @PostMapping("/join")
-    public String joinProcess(company company) {
+    public String joinProcess(Company company) {
 
-        System.out.println(company.getUsername());
-        joinService.joinProcess(company);
+        System.out.println(company.getManagerEmail());
+        userService.userProcess(company);
 
         return "ok";
     }
 }
+
+ */

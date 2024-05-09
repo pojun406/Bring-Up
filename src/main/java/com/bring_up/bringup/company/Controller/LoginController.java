@@ -1,4 +1,4 @@
-package com.bring_up.bringup.company.Controller;
+/*package com.bring_up.bringup.company.Controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,3 +22,5 @@ public class LoginController {
         }
     }
 }
+
+ */

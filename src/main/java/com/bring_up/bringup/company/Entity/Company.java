@@ -10,7 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Entity
 @Getter
 @Table(name = "company")
-public class company {
+public class Company {
     @Id
     @Column(name = "manageremail", nullable = false)
     private String managerEmail;
@@ -66,20 +66,18 @@ public class company {
     @Column(name = "openCVkey", nullable = false, columnDefinition = "INT DEFAULT 0")
     private int openCVKey;
 
-    private company(String manageremail, String pw) {
+    private Company(String manageremail, String pw) {
         this.managerEmail = manageremail;
         this.companyPassword = pw;
     }
 
-    public company() {
-
+    public Company() {
     }
 
-    public static company createUser(String userId, String pw, PasswordEncoder passwordEncoder) {
-        return new company(userId, passwordEncoder.encode(pw));
+    public static Company createUser(String userId, String pw, PasswordEncoder passwordEncoder) {
+        return new Company(userId, passwordEncoder.encode(pw));
     }
 
-    public String getUsername() {
-        return null;
+    public void setCompanyPassword(String encode) {
     }
 }
