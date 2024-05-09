@@ -146,7 +146,7 @@ CREATE TABLE CVportfolio
 (
   cvandportfolioindex         INT NOT NULL AUTO_INCREMENT COMMENT '인덱스번호',
   CVindex       INT NOT NULL COMMENT '이력서번호',
-  portfolioindex INT NULL     COMMENT '인덱스번호',
+  portfolioindex INT NOT NULL     COMMENT '인덱스번호',
   PRIMARY KEY (cvandportfolioindex, CVindex, portfolioindex)
 ) COMMENT '이력서포트폴리오';
 
