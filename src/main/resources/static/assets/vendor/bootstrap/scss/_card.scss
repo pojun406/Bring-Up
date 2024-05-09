@@ -73,9 +73,6 @@
   flex: 1 1 auto;
   padding: var(--#{$prefix}card-spacer-y) var(--#{$prefix}card-spacer-x);
   color: var(--#{$prefix}card-color);
-  display: flex; /* 자식 요소들을 가로로 배열하기 위해 flex 사용 */
-  justify-content: center; /* 자식 요소들을 수평 중앙에 정렬 */
-  align-items: center; /* 자식 요소들을 수직 중앙에 정렬 */
 }
 
 .card-title {
