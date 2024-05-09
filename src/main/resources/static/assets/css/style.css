@@ -203,6 +203,9 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+
+
 }
 
 hr {
@@ -4189,7 +4192,7 @@ textarea.form-control-lg {
   --bs-nav-link-disabled-color: var(--bs-gray-500) !important;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-left: 0;
@@ -4946,15 +4949,6 @@ textarea.form-control-lg {
           flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
   color: var(--bs-card-color);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; /* 자식 요소들을 가로로 배열하기 위해 flex 사용 */
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; /* 자식 요소들을 수평 중앙에 정렬 */
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; /* 자식 요소들을 수직 중앙에 정렬 */
 }
 
 .card-title {
