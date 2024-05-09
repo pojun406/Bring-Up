@@ -1,6 +1,6 @@
 package com.bring_up.bringup.company.Controller;
 
-import com.bring_up.bringup.company.Entity.Company;
+import com.bring_up.bringup.company.Entity.company;
 import com.bring_up.bringup.company.Service.JoinService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +16,7 @@ public class JoinController {
     }
 
     @PostMapping("/join")
-    public String joinProcess(Company company) {
+    public String joinProcess(company company) {
 
         System.out.println(company.getUsername());
         joinService.joinProcess(company);

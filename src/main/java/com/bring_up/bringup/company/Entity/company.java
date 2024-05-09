@@ -5,13 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Entity
 @Getter
 @Table(name = "company")
-public class Company {
+public class company {
     @Id
     @Column(name = "manageremail", nullable = false)
     private String managerEmail;
@@ -67,15 +66,20 @@ public class Company {
     @Column(name = "openCVkey", nullable = false, columnDefinition = "INT DEFAULT 0")
     private int openCVKey;
 
-    private Company(String manageremail, String pw) {
+    private company(String manageremail, String pw) {
         this.managerEmail = manageremail;
         this.companyPassword = pw;
     }
 
-    public static Company createUser(String userId, String pw, PasswordEncoder passwordEncoder) {
-        return new Company(userId, passwordEncoder.encode(pw));
+    public company() {
+
+    }
+
+    public static company createUser(String userId, String pw, PasswordEncoder passwordEncoder) {
+        return new company(userId, passwordEncoder.encode(pw));
     }
 
     public String getUsername() {
+        return null;
     }
 }

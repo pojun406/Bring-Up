@@ -1,6 +1,6 @@
 package com.bring_up.bringup.company.Service;
 
-import com.bring_up.bringup.company.Entity.Company;
+import com.bring_up.bringup.company.Entity.company;
 import com.bring_up.bringup.company.Repository.CompanyRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ public class JoinService {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
-    public void joinProcess(Company joinDTO) {
+    public void joinProcess(company joinDTO) {
 
         String username = joinDTO.getUsername();
         String password = joinDTO.getPassword();
