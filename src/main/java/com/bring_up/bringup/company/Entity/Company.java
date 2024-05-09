@@ -1,4 +1,4 @@
-package com.bring_up.bringup.company.join;
+package com.bring_up.bringup.company.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,7 +10,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Entity
 @Getter
-@Setter
 @Table(name = "company")
 public class Company {
     @Id
@@ -68,4 +67,15 @@ public class Company {
     @Column(name = "openCVkey", nullable = false, columnDefinition = "INT DEFAULT 0")
     private int openCVKey;
 
+    private Company(String manageremail, String pw) {
+        this.managerEmail = manageremail;
+        this.companyPassword = pw;
+    }
+
+    public static Company createUser(String userId, String pw, PasswordEncoder passwordEncoder) {
+        return new Company(userId, passwordEncoder.encode(pw));
+    }
+
+    public String getUsername() {
+    }
 }
