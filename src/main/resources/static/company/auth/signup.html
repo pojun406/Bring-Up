@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BringUP</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Webestica.com">
+    <meta name="description" content="Bootstrap based News, Magazine and Blog Theme">
+
+    <!-- Dark mode -->
+    <script src="/darkmode.js"></script>
+
+    <!-- includeHTML -->
+    <script src="/includeHTML.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/vendor/font-awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="/assets/vendor/apexcharts/css/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="/assets/vendor/overlay-scrollbar/css/OverlayScrollbars.min.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+
+</head>
+<body>
+<main>
+
+    <!-- =======================
+    Inner intro START -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 col-xl-6 mx-auto">
+                    <div class="bg-primary bg-opacity-10 rounded-3 p-4 p-sm-5">
+                        <h2>기업 회원가입</h2>
+                        <!-- Form START -->
+                        <form class="mt-4">
+                            <div class="mb-3">
+                                <label class="form-label" for="businessNumber">사업자 등록 번호</label>
+                                <input type="text" class="form-control" id="businessNumber" placeholder="사업자 등록 번호 (10자리)">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="representativeName">대표자 이름</label>
+                                <input type="text" class="form-control" id="representativeName" placeholder="홍길동">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="openingDate">개업 일자</label>
+                                <input type="text" class="form-control" id="openingDate" placeholder="20XX년XX월XX일">
+                            </div>
+                            <!-- Button -->
+                            <div class="row align-items-center">
+                                <div class="col-sm-4">
+                                    <button type="submit" class="btn btn-success">가입하기</button>
+                                </div>
+                                <div class="col-sm-8 text-sm-end">
+                                    <span>이미 계정이 있으신가요? <a href="/signin.html"><u>로그인하기</u></a></span>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- Form END -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =======================
+    Inner intro END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+<script>
+    $(function () {
+        // 개업일자에 달력 위젯 적용
+        $("#openingDate").datepicker({
+            dateFormat: 'yy-mm-dd' // 날짜 형식 설정
+        });
+    });
+</script>
+</body>
+</html>
