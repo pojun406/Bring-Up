@@ -3,6 +3,8 @@ package com.bring_up.bringup.company.Controller;
 import com.bring_up.bringup.company.Entity.Company;
 import com.bring_up.bringup.company.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,15 +13,19 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/register")
+    @PostMapping("/join")
     public String registerUser(@RequestBody Company user) {
         userService.registerUser(user);
-        return "User registered successfully!";
+        return "ok";
     }
 
     @PostMapping("/login")
-    public String loginUser(@RequestBody Company company) {
-        String token = userService.generateToken(company.getManagerEmail());
-        return "Token: " + token;
+    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
+        String token = userService.authenticate(email, password);
+        if (token != null) {
+            return ResponseEntity.ok("로그인 성공: " + token);
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("유효하지 않은 자격 증명");
+        }
     }
 }

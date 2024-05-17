@@ -8,6 +8,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import provider.JwtProvider;
 
+import java.util.Optional;
+
 @Service
 @ComponentScan(basePackages={"config"})
 @ComponentScan(basePackages={"provider"})
@@ -29,6 +31,17 @@ public class UserService {
 
     public String generateToken(String username) {
         return jwtProvider.generateToken(username);
+    }
+
+    public String authenticate(String email, String password) {
+        Optional<Company> companyemail = companyRepository.findBymanagerEmail(email);
+        Optional<Company> companypassword = companyRepository.findBycompanyPassword(password);
+         if (companyemail.isPresent() && companypassword.isPresent()){
+             String id = email;
+             return generateToken(id); // 인증 성공
+         } else{
+             return null; // 인증 실패
+         }
     }
 
     public void userProcess(Company company) {
