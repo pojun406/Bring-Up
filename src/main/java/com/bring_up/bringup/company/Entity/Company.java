@@ -80,6 +80,4 @@ public class Company {
         return new Company(userId, passwordEncoder.encode(pw));
     }
 
-    public void setCompanyPassword(String encode) {
-    }
 }

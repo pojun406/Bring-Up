@@ -2,6 +2,7 @@ package com.bring_up.bringup.company.Service;
 
 import com.bring_up.bringup.company.Entity.Company;
 import com.bring_up.bringup.company.Repository.CompanyRepository;
+import com.bring_up.bringup.company.dto.CompanyDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,7 +14,7 @@ import java.util.Optional;
 @Service
 @ComponentScan(basePackages={"config"})
 @ComponentScan(basePackages={"provider"})
-public class UserService {
+public class CompanyService {
     @Autowired
     private CompanyRepository companyRepository;
 
@@ -23,9 +24,11 @@ public class UserService {
     @Autowired
     private JwtProvider jwtProvider;
 
-    public Company registerUser(Company company) {
+    public Company registerUser(CompanyDto companyDTO) {
         // 비밀번호를 암호화하여 저장
-        company.setCompanyPassword(passwordEncoder.encode(company.getCompanyPassword()));
+        Company company = new Company();
+        company.setManagerEmail(companyDTO.getId());
+        company.setCompanyPassword(passwordEncoder.encode(companyDTO.getPassword()));
         return companyRepository.save(company);
     }
 

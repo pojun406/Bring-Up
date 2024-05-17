@@ -1,7 +1,7 @@
 package com.bring_up.bringup.company.Controller;
 
 import com.bring_up.bringup.company.Entity.Company;
-import com.bring_up.bringup.company.Service.UserService;
+import com.bring_up.bringup.company.Service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class UserController {
     @Autowired
-    private UserService userService;
+    private CompanyService companyService;
 
     @PostMapping("/join")
     public String registerUser(@RequestBody Company user) {
-        userService.registerUser(user);
+        companyService.registerUser(user);
         return "ok";
     }
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
-        String token = userService.authenticate(email, password);
+        String token = companyService.authenticate(email, password);
         if (token != null) {
             return ResponseEntity.ok("로그인 성공: " + token);
         } else {
