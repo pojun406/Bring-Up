@@ -1,4 +1,4 @@
-package provider;
+package user.provider;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.SignatureAlgorithm;

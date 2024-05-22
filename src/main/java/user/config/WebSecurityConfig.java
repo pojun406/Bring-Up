@@ -1,8 +1,8 @@
-package config;
+package user.config;
 
 import java.io.IOException;
 
-import filter.JwtAuthenticationFilter;
+import user.filter.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
