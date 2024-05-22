@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/side-styles.css">
+    <link rel="stylesheet" href="assets/css/user-style.css">
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -99,6 +100,9 @@ Main contain START -->
     <body>
 
 <main class="flex-grow-1">
+
+    <!--사이드바 start -->
+
     <div class="l-navbar" id="navbar">
         <nav class="nav">
             <div>
@@ -108,11 +112,11 @@ Main contain START -->
                 </div>
                 <div class="nav__list">
                     <a href="#" class="nav__link active">
-                        <img class="avatar-img" src="assets/images/resume1.png" alt="profile">
+                        <img class="avatarr-img" width="24" height="24" src="https://img.icons8.com/ios/24/FFFFFF/about-me.png" alt="about-me"/>
                         <span class="nav_name">마이 홈</span>
                     </a>
                     <a href="#" class="nav__link">
-                        <img class="avatar-img" src="assets/images/resume1.png" alt="profile">
+                        <img class="avatar-img" width="24" height="24" src="https://img.icons8.com/ios-filled/24/FFFFFF/resume.png" alt="resume"/>
                         <span class="nav_name">자소서/이력서</span>
                     </a>
 
@@ -130,7 +134,7 @@ Main contain START -->
                     </div>
 
                     <a href="#" class="nav__link">
-                        <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon>
+                        <img class="nav__icon" width="24" height="24" src="https://img.icons8.com/ios-filled/24/FFFFFF/document-1.png" alt="document-1"/>
                         <span class="nav_name">스크랩/관심기업</span>
                     </a>
 
@@ -148,25 +152,24 @@ Main contain START -->
                     </div>
 
                     <a href="#" class="nav__link">
-                        <ion-icon name="settings-outline" class="nav__icon"></ion-icon>
+                        <img class="nav__icon" width="24" height="24" src="https://img.icons8.com/external-glyph-silhouettes-icons-papa-vector/24/FFFFFF/external-Feedback-black-glyph-icon-teamwork.-glyth.-silhouettes-glyph-silhouettes-icons-papa-vector.png" alt="external-Feedback-black-glyph-icon-teamwork.-glyth.-silhouettes-glyph-silhouettes-icons-papa-vector"/>
                         <span class="nav_name">지원할 만할 공고</span>
                     </a>
                 </div>
                 <a href="#" class="nav__link">
-                    <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                    <img class="nav__icon" width="24" height="24" src="https://img.icons8.com/pastel-glyph/24/FFFFFF/mailing--v3.png" alt="mailing--v3"/>
                     <span class="nav_name">받은 제안</span>
                 </a>
                 <a href="#" class="nav__link">
-                    <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+
+                    <img class="nav__icon" width="24" height="24" src="https://img.icons8.com/ios/50/FFFFFF/order-history.png" alt="order-history"/>
                     <span class="nav_name">지원 내역</span>
-                </a>
-                <a href="#" class="nav__link">
-                    <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
-                    <span class="nav_name">로그아웃</span>
                 </a>
             </div>
         </nav>
     </div>
+<!--사이드바 end -->
+
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
         <div class="offcanvas-header justify-content-end">
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -218,16 +221,10 @@ Main contain START -->
                     <!-- Top bar left -->
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link ps-0" href="about-us.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Forum</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://themes.getbootstrap.com/store/webestica/">Buy now!</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="signin.html">Login / Join</a>
+                            <a class="navbar-brand" href="index.html">
+                                <img class="navbar-brand-item light-mode-item" src="./assets/image/BringUp.png" alt="logo">
+                                <img class="navbar-brand-item dark-mode-item" src="./assets/image/BringUp.png" alt="logo">
+                            </a>
                         </li>
                     </ul>
                     <!-- Top bar right -->
@@ -309,537 +306,194 @@ Main contain START -->
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <!-- Logo START -->
+                <div class="empty-box"></div>
+
+                <!--로고
                 <a class="navbar-brand" href="index.html">
                     <img class="navbar-brand-item light-mode-item" src="./assets/image/BringUp.png" alt="logo">
                     <img class="navbar-brand-item dark-mode-item" src="./assets/image/BringUp.png" alt="logo">
-                </a>
+                </a>-->
                 <!-- Logo END -->
 
                 <!-- Responsive navbar toggler -->
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="text-body h6 d-none d-sm-inline-block">Menu</span>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <!-- Main navbar START -->
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav navbar-nav-scroll mx-auto">
 
-                        <!-- Nav item 1 Demos -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" id="homeMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
-                            <ul class="dropdown-menu" aria-labelledby="homeMenu">
-                                <li> <a class="dropdown-item active" href="index.html">Home default</a></li>
-                                <li> <a class="dropdown-item" href="index-lazy.html">Home lazy load</a></li>
-                                <li> <a class="dropdown-item" href="index-2.html">Magazine classic</a></li>
-                                <li> <a class="dropdown-item" href="index-3.html">Magazine</a></li>
-                                <li> <a class="dropdown-item" href="index-4.html">Home cards</a></li>
-                                <li> <a class="dropdown-item" href="index-5.html">Blog classic</a></li>
-                                <li> <a class="dropdown-item" href="index-6.html">Blog Personal </a></li>
-                                <li> <a class="dropdown-item" href="index-7.html">Blog Vintage</a></li>
-                                <li> <a class="dropdown-item" href="index-8.html">Blog Tech</a></li>
-                                <li> <a class="dropdown-item" href="index-9.html">Blog Fashion</a></li>
-                                <li> <a class="dropdown-item" href="index-10.html">Blog Podcast</a></li>
-                                <li> <a class="dropdown-item" href="index-11.html">Home Shop </a></li>
-                            </ul>
-                        </li>
 
-                        <!-- Nav item 2 Pages -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">채용정보</a>
-                            <ul class="dropdown-menu" aria-labelledby="pagesMenu">
-                                <li> <a class="dropdown-item" href="./user/recruitment_notice.html">채용공고</a></li>
-                                <li> <a class="dropdown-item" href="contact-us.html">Contact</a></li>
-                                <!-- Dropdown submenu -->
-                                <li class="dropdown-submenu dropend">
-                                    <a class="dropdown-item dropdown-toggle" href="#">Shop</a>
-                                    <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                        <li> <a class="dropdown-item" href="shop-grid.html">Shop grid</a> </li>
-                                        <li> <a class="dropdown-item" href="shop-detail.html">Shop detail</a> </li>
-                                        <li> <a class="dropdown-item" href="checkout.html">Checkout</a> </li>
-                                        <li> <a class="dropdown-item" href="my-cart.html">Cart</a> </li>
-                                        <li> <a class="dropdown-item" href="empty-cart.html">Empty Cart</a> </li>
-                                    </ul>
-                                </li>
-                                <!-- Dropdown submenu -->
-                                <li class="dropdown-submenu dropend">
-                                    <a class="dropdown-item dropdown-toggle" href="#">Other Archives</a>
-                                    <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                        <li> <a class="dropdown-item" href="author.html">Author Page</a> </li>
-                                        <li> <a class="dropdown-item" href="categories.html">Category page 1</a> </li>
-                                        <li> <a class="dropdown-item" href="categories-2.html">Category page 2</a> </li>
-                                        <li> <a class="dropdown-item" href="tag.html"># tag</a> </li>
-                                        <li> <a class="dropdown-item" href="search-result.html">Search result</a> </li>
-                                    </ul>
-                                </li>
-                                <li> <a class="dropdown-item" href="404.html">Error 404</a></li>
-                                <li> <a class="dropdown-item" href="signin.html">signin</a></li>
-                                <li> <a class="dropdown-item" href="signup.html">signup</a></li>
-                                <li> <a class="dropdown-item" href="offline.html">offline</a></li>
-                                <!-- Dropdown submenu levels -->
-                                <li class="dropdown-divider"></li>
-                                <li class="dropdown-submenu dropend">
-                                    <a class="dropdown-item dropdown-toggle" href="#">Dropdown levels</a>
-                                    <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                        <!-- dropdown submenu open right -->
-                                        <li class="dropdown-submenu dropend">
-                                            <a class="dropdown-item dropdown-toggle" href="#">Dropdown (end)</a>
-                                            <ul class="dropdown-menu" data-bs-popper="none">
-                                                <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                                <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                            </ul>
-                                        </li>
-                                        <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                        <!-- dropdown submenu open left -->
-                                        <li class="dropdown-submenu dropstart">
-                                            <a class="dropdown-item dropdown-toggle" href="#">Dropdown (start)</a>
-                                            <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
-                                                <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                                <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                            </ul>
-                                        </li>
-                                        <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-divider"></li>
-                                <li>
-                                    <a class="dropdown-item" href="https://support.webestica.com/" target="_blank">
-                                        <i class="text-warning fa-fw bi bi-life-preserver me-2"></i>Support
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="docs/index.html" target="_blank">
-                                        <i class="text-danger fa-fw bi bi-card-text me-2"></i>Documentation
-                                    </a>
-                                </li>
-                                <li class="dropdown-divider"></li>
-                                <li>
-                                    <a class="dropdown-item" href="https://blogzine.webestica.com/rtl" target="_blank">
-                                        <i class="text-info fa-fw bi bi-toggle-off me-2"></i>RTL demo
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="https://themes.getbootstrap.com/store/webestica/" target="_blank">
-                                        <i class="text-success fa-fw bi bi-cloud-download-fill me-2"></i>Buy blogzine!
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <!-- Nav item 3 Post -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="postMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">신입/인턴</a>
-                            <ul class="dropdown-menu" aria-labelledby="postMenu">
-                                <!-- dropdown submenu -->
-                                <li class="dropdown-submenu dropend">
-                                    <a class="dropdown-item dropdown-toggle" href="#">Post grid</a>
-                                    <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                        <li> <a class="dropdown-item" href="post-grid.html">Post grid</a> </li>
-                                        <li> <a class="dropdown-item" href="post-grid-4-col.html">Post grid 4 col</a> </li>
-                                        <li> <a class="dropdown-item" href="post-grid-masonry.html">Post grid masonry</a> </li>
-                                        <li> <a class="dropdown-item" href="post-grid-masonry-filter.html">Post grid masonry filter</a> </li>
-                                        <li> <a class="dropdown-item" href="post-large-and-grid.html">Post mixed large than grid</a> </li>
-                                    </ul>
-                                </li>
-                                <li> <a class="dropdown-item" href="post-list.html">Post list</a> </li>
-                                <li> <a class="dropdown-item" href="post-list-2.html">Post list 2</a> </li>
-                                <li> <a class="dropdown-item" href="post-cards.html">Post card</a> </li>
-                                <li> <a class="dropdown-item" href="post-overlay.html">Post Overlay</a> </li>
-                                <li> <a class="dropdown-item" href="post-types.html">Post types</a> </li>
-                                <li class="dropdown-divider"></li>
-                                <li> <a class="dropdown-item" href="post-single.html">Post single magazine</a> </li>
-                                <li> <a class="dropdown-item" href="post-single-2.html">Post single classic</a> </li>
-                                <li> <a class="dropdown-item" href="post-single-3.html">Post single minimal</a> </li>
-                                <li> <a class="dropdown-item" href="post-single-4.html">Post single card</a> </li>
-                                <li> <a class="dropdown-item" href="post-single-5.html">Post single review</a> </li>
-                                <li> <a class="dropdown-item" href="post-single-6.html">Post single video</a> </li>
-                                <li> <a class="dropdown-item" href="podcast-single.html">Podcast single</a> </li>
-                                <li class="dropdown-divider"></li>
-                                <li> <a class="dropdown-item" href="pagination-styles.html">Pagination styles</a> </li>
-                            </ul>
-                        </li>
-
-                        <!-- Nav item 4 Mega menu -->
-                        <li class="nav-item dropdown dropdown-fullwidth">
-                            <a class="nav-link dropdown-toggle" href="#" id="megaMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">기업/연봉정보</a>
-                            <div class="dropdown-menu" aria-labelledby="megaMenu">
-                                <div class="container">
-                                    <div class="row g-4 p-3 flex-fill">
-                                        <!-- Card item START -->
-                                        <div class="col-sm-6 col-lg-3">
-                                            <div class="card bg-transparent">
-                                                <!-- Card img -->
-                                                <img class="card-img rounded" src="assets/images/blog/16by9/small/01.jpg" alt="Card image">
-                                                <div class="card-body px-0 pt-3">
-                                                    <h6 class="card-title mb-0"><a href="#" class="btn-link text-reset fw-bold">7 common mistakes everyone makes while traveling</a></h6>
-                                                    <!-- Card info -->
-                                                    <ul class="nav nav-divider align-items-center text-uppercase small mt-2">
-                                                        <li class="nav-item">
-                                                            <a href="#" class="text-reset btn-link">Joan Wallace</a>
-                                                        </li>
-                                                        <li class="nav-item">Feb 18, 2022</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Card item END -->
-                                        <!-- Card item START -->
-                                        <div class="col-sm-6 col-lg-3">
-                                            <div class="card bg-transparent">
-                                                <!-- Card img -->
-                                                <img class="card-img rounded" src="assets/images/blog/16by9/small/02.jpg" alt="Card image">
-                                                <div class="card-body px-0 pt-3">
-                                                    <h6 class="card-title mb-0"><a href="#" class="btn-link text-reset fw-bold">12 worst types of business accounts you follow on Twitter</a></h6>
-                                                    <!-- Card info -->
-                                                    <ul class="nav nav-divider align-items-center text-uppercase small mt-2">
-                                                        <li class="nav-item">
-                                                            <a href="#" class="text-reset btn-link">Lori Stevens</a>
-                                                        </li>
-                                                        <li class="nav-item">Jun 03, 2022</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Card item END -->
-                                        <!-- Card item START -->
-                                        <div class="col-sm-6 col-lg-3">
-                                            <div class="card bg-transparent">
-                                                <!-- Card img -->
-                                                <img class="card-img rounded" src="assets/images/blog/16by9/small/03.jpg" alt="Card image">
-                                                <div class="card-body px-0 pt-3">
-                                                    <h6 class="card-title mb-0"><a href="#" class="btn-link text-reset fw-bold">Skills that you can learn from business</a></h6>
-                                                    <!-- Card info -->
-                                                    <ul class="nav nav-divider align-items-center text-uppercase small mt-2">
-                                                        <li class="nav-item">
-                                                            <a href="#" class="text-reset btn-link">Judy Nguyen</a>
-                                                        </li>
-                                                        <li class="nav-item">Sep 07, 2022</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Card item END -->
-                                        <!-- Card item START -->
-                                        <div class="col-sm-6 col-lg-3">
-                                            <div class="bg-primary bg-opacity-10 p-4 text-center h-100 w-100 rounded">
-                                                <span>The Blogzine</span>
-                                                <h3>Premium Membership</h3>
-                                                <p>Become a Member Today!</p>
-                                                <a href="#" class="btn btn-warning">View pricing plans</a>
-                                            </div>
-                                        </div>
-                                        <!-- Card item END -->
-                                    </div> <!-- Row END -->
-                                    <!-- Trending tags -->
-                                    <div class="row px-3">
-                                        <div class="col-12">
-                                            <ul class="list-inline mt-3">
-                                                <li class="list-inline-item">Trending tags:</li>
-                                                <li class="list-inline-item"><a href="#" class="btn btn-sm btn-primary-soft">Travel</a></li>
-                                                <li class="list-inline-item"><a href="#" class="btn btn-sm btn-warning-soft">Business</a></li>
-                                                <li class="list-inline-item"><a href="#" class="btn btn-sm btn-success-soft">Tech</a></li>
-                                                <li class="list-inline-item"><a href="#" class="btn btn-sm btn-danger-soft">Gadgets</a></li>
-                                                <li class="list-inline-item"><a href="#" class="btn btn-sm btn-info-soft">Lifestyle</a></li>
-                                                <li class="list-inline-item"><a href="#" class="btn btn-sm btn-primary-soft">Vaccine</a></li>
-                                                <li class="list-inline-item"><a href="#" class="btn btn-sm btn-success-soft">Sports</a></li>
-                                                <li class="list-inline-item"><a href="#" class="btn btn-sm btn-danger-soft">Covid-19</a></li>
-                                                <li class="list-inline-item"><a href="#" class="btn btn-sm btn-info-soft">Politics</a></li>
-                                            </ul>
-                                        </div>
-                                    </div> <!-- Row END -->
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- Nav item 5 link-->
-                        <li class="nav-item"> <a class="nav-link" href="dashboard.html">커뮤니티</a></li>
-                    </ul>
-                </div>
-                <!-- Main navbar END -->
 
                 <!-- Nav right START -->
-                <div class="nav flex-nowrap align-items-center">
-                    <!-- Nav Button -->
 
-                    <!-- Nav Search -->
-                    <div class="nav-item dropdown dropdown-toggle-icon-none nav-search">
-                        <a class="nav-link dropdown-toggle" role="button" href="#" id="navSearch" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-search fs-4"> </i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end shadow rounded p-2" aria-labelledby="navSearch">
-                            <form class="input-group">
-                                <input class="form-control border-success" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-success m-0" type="submit">Search</button>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- Offcanvas menu toggler -->
-                    <div class="nav-item">
-                        <a class="nav-link p-0" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
-                            <i class="bi bi-text-right rtl-flip fs-2" data-bs-target="#offcanvasMenu"> </i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Nav right END -->
             </div>
         </nav>
         <!-- Logo Nav END -->
     </header>
 
-    <!-- Categories START -->
-    <section class="position-relative pt-0">
+    <!-- 마이페이지 START -->
+    <section class="py-4">
         <div class="container">
-            <div class="row">
-                <!-- Card item START -->
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card mb-4">
-                        <!-- Card img -->
-                        <div class="card-fold position-relative">
-                            <img class="card-img" src="assets/images/resume.png" alt="Card image">
-                        </div>
-                        <div class="card-body px-0 pt-3">
-                            <h4 class="card-title"><a href="post-single-4.html" class="btn-link text-reset stretched-link fw-bold">7 common mistakes everyone makes while traveling</a></h4>
-                            <!-- Card info -->
-                            <ul class="nav nav-divider align-items-center text-uppercase small">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link text-reset btn-link">Louis Ferguson</a>
-                                </li>
-                                <li class="nav-item">Mar 07, 2022</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card item END -->
-                <!-- Card item START -->
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card mb-4">
-                        <!-- Card img -->
-                        <div class="card-fold position-relative">
-                            <img class="card-img" src="assets/images/blog/4by3/08.jpg" alt="Card image">
-                            <div class="card-img-overlay d-flex align-items-start flex-column p-3">
-                                <!-- Card overlay Top -->
-                                <div class="w-100 mb-auto d-flex justify-content-end">
-                                    <div class="text-end ms-auto">
-                                        <!-- Card format icon -->
-                                        <div class="icon-md bg-white bg-opacity-10 bg-blur text-white fw-bold rounded-circle" title="8.5 rating">8.5</div>
+
+            <div class="row g-4">
+                <!-- Profile cover and info START -->
+                <div class="col-12">
+                    <div class="card mb-4 position-relative z-index-9">
+                        <!-- Cover image -->
+                        <div class="card-body pt-3 pb-0">
+                            <div class="row d-flex justify-content-between">
+                                <!-- Avatar -->
+                                <div class="col-sm-12 col-md-auto text-center text-md-start">
+                                    <div class="avatar avatar-xxl mt-n5">
+                                        <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/roopie.jpg" alt="">
                                     </div>
+                                </div>
+                                <!-- Profile info -->
+                                <div class="col-sm-12 col-md text-center text-md-start d-md-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h4 class="my-1">잔망루피 <i class="bi bi-patch-check-fill text-info small"></i></h4>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="bi bi-person-fill me-1"></i> abcd@naver.com </li>
+                                            <li class="list-inline-item"><i class="bi bi-geo-alt me-1"></i> 서울특별시 용산구 **동 **구 </li>
+                                            <li class="list-inline-item"><i class="bi bi-calendar2-plus me-1"></i> 2000년 10월 25일 </li>
+                                        </ul>
+                                        <p class="m-0"></p>
+                                    </div>
+                                    <!-- 스크랩 -->
+
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body px-0 pt-3">
-                            <h4 class="card-title"><a href="post-single-4.html" class="btn-link text-reset stretched-link fw-bold">Skills that you can learn from business</a></h4>
-                            <!-- Card info -->
-                            <ul class="nav nav-divider align-items-center text-uppercase small">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link text-reset btn-link">Samuel Bishop</a>
-                                </li>
-                                <li class="nav-item">Aug 15, 2022</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
-                <!-- Card item END -->
-                <!-- Card item START -->
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card mb-4">
-                        <!-- Card img -->
-                        <div class="card-fold position-relative">
-                            <img class="card-img" src="assets/images/blog/4by3/09.jpg" alt="Card image">
+                <!-- Profile info END -->
+            </div>
+
+            <div class="row g-4">
+                <!-- Left sidebar START -->
+                <div class="cl7">
+                    <!-- Profile START -->
+                    <div class="card border mb-4">
+                        <div class="card-header border-bottom p-3">
+                            <h5 class="card-header-title mb-0">내 프로필</h5>
                         </div>
-                        <div class="card-body px-0 pt-3">
-                            <h4 class="card-title"><a href="post-single-4.html" class="btn-link text-reset stretched-link fw-bold">10 tell-tale signs you need to get a new business</a></h4>
-                            <!-- Card info -->
-                            <ul class="nav nav-divider align-items-center text-uppercase small">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link text-reset btn-link">Dennis Barrett</a>
-                                </li>
-                                <li class="nav-item">Jun 01, 2022</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card item END -->
-                <!-- Card item START -->
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card mb-4">
-                        <!-- Card img -->
-                        <div class="card-fold position-relative">
-                            <img class="card-img" src="assets/images/blog/4by3/10.jpg" alt="Card image">
-                        </div>
-                        <div class="card-body px-0 pt-3">
-                            <h4 class="card-title"><a href="post-single-4.html" class="btn-link text-reset stretched-link fw-bold">This is why this year will be the year of startups</a></h4>
-                            <!-- Card info -->
-                            <ul class="nav nav-divider align-items-center text-uppercase small">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link text-reset btn-link">Bryan Knight</a>
-                                </li>
-                                <li class="nav-item">Dec 07, 2022</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card item END -->
-                <!-- Card item START -->
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card mb-4">
-                        <!-- Card img -->
-                        <div class="card-fold position-relative">
-                            <img class="card-img" src="assets/images/blog/4by3/11.jpg" alt="Card image">
-                            <div class="card-img-overlay d-flex align-items-start flex-column p-3">
-                                <!-- Card overlay Top -->
-                                <div class="w-100 mb-auto d-flex justify-content-end">
-                                    <div class="text-end ms-auto">
-                                        <!-- Card format icon -->
+                        <div class="card-body">
+                            <!-- Full name -->
+                            <div class="mb-3">
+                                <label class="form-label">이름</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" value="잔망루피" placeholder="First name">
+                                </div>
+                            </div>
+                            <!-- Username -->
+                            <div class="mb-3">
+                                <label class="form-label">e-mail</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">e-mail</span>
+                                    <input type="text" class="form-control" value="abcd@naver.com">
+                                </div>
+                            </div>
+                            <!-- Profile picture -->
+                            <div class="mb-3">
+                                <label class="form-label">프로필 사진 변경</label>
+                                <!-- Avatar upload START -->
+                                <div class="d-flex align-items-center">
+                                    <div class="position-relative me-3">
+                                        <!-- Avatar edit -->
+                                        <div class="position-absolute top-0 end-0  z-index-9">
+                                            <a class="btn btn-sm btn-light btn-round mb-0 mt-n1 me-n1" href="#"> <i class="bi bi-pencil"></i> </a>
+                                        </div>
+                                        <!-- Avatar preview -->
+                                        <div class="avatar avatar-xl">
+                                            <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/roopie.jpg" alt="">
+                                        </div>
                                     </div>
+                                    <!-- Avatar remove button -->
+                                    <div class="avatar-remove">
+                                        <button type="button" class="btn btn-light">변경</button>
+                                    </div>
+                                </div>
+                                <!-- Avatar upload END -->
+                            </div>
+                            <!-- Job title -->
+                            <div class="mb-3">
+                                <label class="form-label">전화번호</label>
+                                <input class="form-control" type="text" value="010-5555-1111">
+                            </div>
+                            <!-- Location -->
+                            <div class="mb-3">
+                                <label class="form-label">집 주소</label>
+                                <input class="form-control" type="text" value="서울특별시 용산구 **동 **구">
+                            </div>
+                            <!-- Bio -->
+                            <div class="mb-3">
+                                <label class="form-label">한줄 소개</label>
+                                <textarea class="form-control">어떤일이든 항상 책임감있고 최선을 다하는 사원이 되겠습니다!</textarea>
+                            </div>
+                            <!-- Birthday -->
+                            <div>
+                                <label class="form-label">생년월일</label>
+                                <input type="text" class="form-control flatpickr-input" placeholder="DD/MM/YYYY" value="2000/10/25">
+                            </div>
+                            <!-- Save button -->
+                            <div class="d-flex justify-content-end mt-4">
+                                <a href="#" class="btn text-secondary border-0 me-2">Discard</a>
+                                <a href="#" class="btn btn-primary">Save changes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Profile END -->
+                    <div class="card bg-transparent border rounded-3 mt-4">
+                        <!-- Card header -->
+                        <div class="card-header bg-transparent border-bottom p-3">
+                            <h5 class="card-header-title mb-0">로그인중인 계정</h5>
+                        </div>
+                        <!-- Card body START -->
+                        <div class="card-body">
+                            <!-- Google -->
+                            <div class="position-relative mb-3 mt-3 d-sm-flex bg-success bg-opacity-10 border border-success p-3 rounded">
+                                <!-- Title and content -->
+                                <h2 class="fs-1 mb-0 me-3"><i class="fab fa-google text-google-icon"></i></h2>
+                                <div>
+                                    <div class="position-absolute top-0 start-100 translate-middle bg-white rounded-circle lh-1 h-15">
+                                        <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                                    </div>
+                                    <h6 class="mb-1">Google</h6>
+                                    <p class="mb-1 small">You are successfully connected to your Google account</p>
+                                    <!-- Button -->
+                                    <button type="button" class="btn btn-sm btn-danger mb-0 me-2">Invoke</button>
+                                    <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
+                                </div>
+                            </div>
+
+                            <!-- Blogger -->
+                            <div class="mb-3 d-sm-flex border p-3 rounded">
+                                <!-- Title and content -->
+                                <h2 class="fs-1 mb-0 me-3"><i class="fab fa-blogger text-warning"></i></h2>
+                                <div>
+                                    <h6 class="mb-1">Blogger</h6>
+                                    <p class="mb-1 small">Connect with Blogger account for a personalized experience</p>
+                                    <!-- Button -->
+                                    <button type="button" class="btn btn-sm btn-primary mb-0 me-2">Connect Blogger </button>
+                                    <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
+                                </div>
+                            </div>
+
+                            <!-- Facebook -->
+                            <div class="d-sm-flex border p-3 rounded mb-2">
+                                <!-- Title and content -->
+                                <h2 class="fs-1 mb-0 me-3"><i class="fab fa-facebook text-facebook"></i></h2>
+                                <div>
+                                    <h6 class="mb-1">Facebook</h6>
+                                    <p class="mb-1 small">Connect with Facebook account for a personalized experience</p>
+                                    <!-- Button -->
+                                    <button type="button" class="btn btn-sm btn-primary mb-0 me-2">Connect Facebook</button>
+                                    <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body px-0 pt-3">
-                            <h4 class="card-title"><a href="post-single-4.html" class="btn-link text-reset stretched-link fw-bold">Best Pinterest Boards for learning about business</a></h4>
-                            <!-- Card info -->
-                            <ul class="nav nav-divider align-items-center text-uppercase small">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link text-reset btn-link">Judy Nguyen</a>
-                                </li>
-                                <li class="nav-item">Sep 07, 2022</li>
-                            </ul>
-                        </div>
+                        <!-- Card body END -->
                     </div>
                 </div>
-                <!-- Card item END -->
-                <!-- Card item START -->
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card mb-4">
-                        <!-- Card img -->
-                        <div class="card-fold position-relative">
-                            <img class="card-img" src="assets/images/blog/4by3/12.jpg" alt="Card image">
-                        </div>
-                        <div class="card-body px-0 pt-3">
-                            <h4 class="card-title"><a href="post-single-4.html" class="btn-link text-reset stretched-link fw-bold">How did we get here? The real history of our business</a></h4>
-                            <!-- Card info -->
-                            <ul class="nav nav-divider align-items-center text-uppercase small">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link text-reset btn-link">Amanda Reed</a>
-                                </li>
-                                <li class="nav-item">Aug 06, 2022</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card item END -->
-                <!-- Card item START -->
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card mb-4">
-                        <!-- Card img -->
-                        <div class="card-fold position-relative">
-                            <img class="card-img" src="assets/images/blog/4by3/13.jpg" alt="Card image">
-                        </div>
-                        <div class="card-body px-0 pt-3">
-                            <h4 class="card-title"><a href="post-single-4.html" class="btn-link text-reset stretched-link fw-bold">Facts about business that will put you in a good mood</a></h4>
-                            <!-- Card info -->
-                            <ul class="nav nav-divider align-items-center text-uppercase small">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link text-reset btn-link">Joan Wallace</a>
-                                </li>
-                                <li class="nav-item">Feb 18, 2022</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card item END -->
-                <!-- Card item START -->
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card mb-4">
-                        <!-- Card img -->
-                        <div class="card-fold position-relative">
-                            <img class="card-img" src="assets/images/blog/4by3/14.jpg" alt="Card image">
-                            <div class="card-img-overlay d-flex align-items-start flex-column p-3">
-                                <!-- Card overlay Top -->
-                                <div class="w-100 mb-auto d-flex justify-content-end">
-                                    <div class="text-end ms-auto">
-                                        <!-- Card format icon -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body px-0 pt-3">
-                            <h4 class="card-title"><a href="post-single-4.html" class="btn-link text-reset stretched-link fw-bold">Questions everyone working in IT should know how to answer</a></h4>
-                            <!-- Card info -->
-                            <ul class="nav nav-divider align-items-center text-uppercase small">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link text-reset btn-link">Lori Stevens</a>
-                                </li>
-                                <li class="nav-item">Jun 03, 2022</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card mb-4">
-                        <!-- Card img -->
-                        <div class="card-fold position-relative">
-                            <img class="card-img" src="assets/images/blog/4by3/14.jpg" alt="Card image">
-                            <div class="card-img-overlay d-flex align-items-start flex-column p-3">
-                                <!-- Card overlay Top -->
-                                <div class="w-100 mb-auto d-flex justify-content-end">
-                                    <div class="text-end ms-auto">
-                                        <!-- Card format icon -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body px-0 pt-3">
-                            <h4 class="card-title"><a href="post-single-4.html" class="btn-link text-reset stretched-link fw-bold">Questions everyone working in IT should know how to answer</a></h4>
-                            <!-- Card info -->
-                            <ul class="nav nav-divider align-items-center text-uppercase small">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link text-reset btn-link">Lori Stevens</a>
-                                </li>
-                                <li class="nav-item">Jun 03, 2022</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="card mb-4">
-                        <!-- Card img -->
-                        <div class="card-fold position-relative">
-                            <img class="card-img" src="assets/images/blog/4by3/14.jpg" alt="Card image">
-                            <div class="card-img-overlay d-flex align-items-start flex-column p-3">
-                                <!-- Card overlay Top -->
-                                <div class="w-100 mb-auto d-flex justify-content-end">
-                                    <div class="text-end ms-auto">
-                                        <!-- Card format icon -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body px-0 pt-3">
-                            <h4 class="card-title"><a href="post-single-4.html" class="btn-link text-reset stretched-link fw-bold">Questions everyone working in IT should know how to answer</a></h4>
-                            <!-- Card info -->
-                            <ul class="nav nav-divider align-items-center text-uppercase small">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link text-reset btn-link">Lori Stevens</a>
-                                </li>
-                                <li class="nav-item">Jun 03, 2022</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card item END -->
-            </div> <!-- Row end -->
-
-            <!-- Pagination START -->
-
-            <!-- Pagination END -->
+            </div>
         </div>
     </section>
-
 
     <!-- =======================
     Main contain END -->
@@ -869,6 +523,7 @@ JS libraries, plugins and custom scripts -->
 <script src="assets/js/functions.js"></script>
 <!-- IONICONS -->
 <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+
 <!-- JS -->
 <script src="assets/js/main.js"></script>
 
