@@ -346,3 +346,6 @@ ALTER TABLE salary
   ADD CONSTRAINT FK_category_TO_salary
     FOREIGN KEY (manageremail)
     REFERENCES category (manageremail);
+    
+ALTER TABLE company MODIFY managerphonenumber VARCHAR(15) NOT NULL COMMENT '담당자 번호';
+
