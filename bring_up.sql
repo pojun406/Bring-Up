@@ -131,7 +131,6 @@ CREATE TABLE CV
   CVimage   VARCHAR(255)     NOT NULL COMMENT '프로필이미지',
   mainCV    BOOLEAN      NULL     DEFAULT false COMMENT '메인이력서 구분',
   education VARCHAR(30)  NOT NULL COMMENT '학력',
-  userId    VARCHAR(8)   NOT NULL COMMENT '유저 아이디',
   skill     VARCHAR(500) NULL     COMMENT '기술스택',
   useremail VARCHAR(20)  NOT NULL COMMENT '유저 이메일',
   PRIMARY KEY (cvindex)
