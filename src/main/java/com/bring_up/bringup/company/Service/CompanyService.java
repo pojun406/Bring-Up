@@ -26,8 +26,8 @@ public class CompanyService {
     public Company registerUser(Company companyDTO) {
         // 비밀번호를 암호화하여 저장
         Company company = new Company();
-        company.setManagerEmail(companyDTO.getId());
-        company.setCompanyPassword(passwordEncoder.encode(companyDTO.getPassword()));
+        company.setManagerEmail(companyDTO.getManagerEmail());
+        company.setCompanyPassword(passwordEncoder.encode(companyDTO.getCompanyPassword()));
         return companyRepository.save(company);
     }
 
