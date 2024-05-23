@@ -1,0 +1,10 @@
+POST http://localhost:8080/api/Authenticity
+Content-Type: application/json
+Body:
+{
+businesses[{
+      "b_no": "0000000000",
+      "start_dt": "20000101",
+      "p_nm": "홍길동",
+}]
+}
