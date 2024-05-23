@@ -2,6 +2,7 @@ package com.bring_up.bringup.company.Controller;
 
 import com.bring_up.bringup.company.Entity.Company;
 import com.bring_up.bringup.company.Service.CompanyService;
+import com.bring_up.bringup.company.Service.VerificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
