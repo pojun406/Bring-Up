@@ -124,7 +124,7 @@ a {
 /* CSS Styles */
 /* CSS Styles */
 .expanded-sidebar .l-navbar {
-    width: 250px; /* 펼쳐진 상태의 너비 */
+    width: 220px; /* 펼쳐진 상태의 너비 */
     transition: width 0.5s; /* 너비에만 트랜지션 적용 */
 }
 

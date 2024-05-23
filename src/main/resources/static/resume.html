@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Blogzine - Blog and Magazine Bootstrap 5 Theme</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/side-styles.css">
-    <link rel="stylesheet" href="assets/css/user-style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-    <!-- Meta Tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Webestica.com">
-    <meta name="description" content="Bootstrap based News, Magazine and Blog Theme">
-
-    <!-- Dark mode -->
     <script>
         const storedTheme = localStorage.getItem('theme')
 
@@ -86,18 +76,13 @@
     <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="assets/vendor/apexcharts/css/apexcharts.css">
     <link rel="stylesheet" type="text/css" href="assets/vendor/quill/css/quill.snow.css">
-
+    <link rel="stylesheet" href="assets/css/side-styles.css">
+    <link rel="stylesheet" href="assets/css/user-style.css">
     <!-- Theme CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-
 </head>
-
-<!-- **************** MAIN CONTENT START **************** -->
-<!-- Left sidebar START -->
-    <!-- =======================
-Main contain START -->
-    <body>
+<body>
 
 <main class="flex-grow-1">
     <!--사이드바 start -->
@@ -113,8 +98,8 @@ Main contain START -->
                         <img class="avatarr-img" width="24" height="24" src="https://img.icons8.com/ios/24/FFFFFF/about-me.png" alt="about-me"/>
                         <span class="nav_name">마이 홈</span>
                     </a>
-                    <a href="resume.html" class="nav__link">
-                        <img class="avatar-img" width="24"  height="24" src="https://img.icons8.com/ios-filled/24/FFFFFF/resume.png" alt="resume"/>
+                    <a href="#" class="nav__link">
+                        <img class="avatar-img" width="24" height="24" src="https://img.icons8.com/ios-filled/24/FFFFFF/resume.png" alt="resume"/>
                         <span class="nav_name">자소서/이력서</span>
                     </a>
 
@@ -166,8 +151,7 @@ Main contain START -->
             </div>
         </nav>
     </div>
-<!--사이드바 end -->
-
+    <!--사이드바 end -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
         <div class="offcanvas-header justify-content-end">
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -208,9 +192,7 @@ Main contain START -->
             </div>
         </div>
     </div>
-    <!-- Offcanvas END -->
-    <!-- =======================
-    Header START -->
+    <!--Header START -->
     <header class="navbar-light navbar-sticky header-static">
 
         <div class="navbar-top d-none d-lg-block small">
@@ -325,186 +307,205 @@ Main contain START -->
         <!-- Logo Nav END -->
     </header>
 
-    <!-- 마이페이지 START -->
     <section class="py-4">
         <div class="container">
-
-            <div class="row g-4">
-                <!-- Profile cover and info START -->
+            <div class="row pb-4">
                 <div class="col-12">
-                    <div class="card mb-4 position-relative z-index-9">
-                        <!-- Cover image -->
-                        <div class="card-body pt-3 pb-0">
-                            <div class="row d-flex justify-content-between">
-                                <!-- Avatar -->
-                                <div class="col-sm-12 col-md-auto text-center text-md-start">
-                                    <div class="avatar avatar-xxl mt-n5">
-                                        <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/roopie.jpg" alt="">
-                                    </div>
-                                </div>
-                                <!-- Profile info -->
-                                <div class="col-sm-12 col-md text-center text-md-start d-md-flex justify-content-between align-items-center">
-                                    <div>
-                                        <h4 class="my-1">잔망루피 <i class="bi bi-patch-check-fill text-info small"></i></h4>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="bi bi-person-fill me-1"></i> abcd@naver.com </li>
-                                            <li class="list-inline-item"><i class="bi bi-geo-alt me-1"></i> 서울특별시 용산구 **동 **구 </li>
-                                            <li class="list-inline-item"><i class="bi bi-calendar2-plus me-1"></i> 2000년 10월 25일 </li>
-                                        </ul>
-                                        <p class="m-0"></p>
-                                    </div>
-                                    <!-- 스크랩 -->
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Title -->
+                    <h1 class="mb-0 h2">Create a post</h1>
                 </div>
-                <!-- Profile info END -->
             </div>
-
-            <div class="row g-4">
-                <!-- Left sidebar START -->
-                <div class="cl7">
-                    <!-- Profile START -->
-                    <div class="card border mb-4">
-                        <div class="card-header border-bottom p-3">
-                            <h5 class="card-header-title mb-0">내 프로필</h5>
-                        </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- Chart START -->
+                    <div class="card border">
+                        <!-- Card body -->
                         <div class="card-body">
-                            <!-- Full name -->
-                            <div class="mb-3">
-                                <label class="form-label">이름</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" value="잔망루피" placeholder="First name">
-                                </div>
-                            </div>
-                            <!-- Username -->
-                            <div class="mb-3">
-                                <label class="form-label">e-mail</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">e-mail</span>
-                                    <input type="text" class="form-control" value="abcd@naver.com">
-                                </div>
-                            </div>
-                            <!-- Profile picture -->
-                            <div class="mb-3">
-                                <label class="form-label">프로필 사진 변경</label>
-                                <!-- Avatar upload START -->
-                                <div class="d-flex align-items-center">
-                                    <div class="position-relative me-3">
-                                        <!-- Avatar edit -->
-                                        <div class="position-absolute top-0 end-0  z-index-9">
-                                            <a class="btn btn-sm btn-light btn-round mb-0 mt-n1 me-n1" href="#"> <i class="bi bi-pencil"></i> </a>
-                                        </div>
-                                        <!-- Avatar preview -->
-                                        <div class="avatar avatar-xl">
-                                            <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/roopie.jpg" alt="">
+                            <!-- Form START -->
+                            <form>
+                                <!-- Main form -->
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- Post name -->
+                                        <div class="mb-3">
+                                            <label class="form-label">Post name</label>
+                                            <input required id="con-name" name="name" type="text" class="form-control" placeholder="Post name">
+                                            <small>Moving heaven divide two sea female great midst spirit</small>
                                         </div>
                                     </div>
-                                    <!-- Avatar remove button -->
-                                    <div class="avatar-remove">
-                                        <button type="button" class="btn btn-light">변경</button>
+                                    <!-- Post type START -->
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Post type</label>
+                                            <div class="d-flex flex-wrap gap-3">
+                                                <!-- Post type item -->
+                                                <div class="flex-fill">
+                                                    <input type="radio" class="btn-check" name="poll" id="option">
+                                                    <label class="btn btn-outline-light w-100" for="option">
+                                                        <i class="bi bi-chat-left-text fs-1"></i>
+                                                        <span class="d-block"> Post </span>
+                                                    </label>
+                                                </div>
+                                                <!-- Post type item -->
+                                                <div class="flex-fill">
+                                                    <input type="radio" class="btn-check" name="poll" id="option2">
+                                                    <label class="btn btn-outline-light w-100" for="option2">
+                                                        <i class="bi bi-patch-question fs-1"></i>
+                                                        <span class="d-block"> Question </span>
+                                                    </label>
+                                                </div>
+                                                <!-- Post type item -->
+                                                <div class="flex-fill">
+                                                    <input type="radio" class="btn-check" name="poll" id="option3" checked>
+                                                    <label class="btn btn-outline-light w-100" for="option3">
+                                                        <i class="bi bi-chat-right-dots fs-1"></i>
+                                                        <span class="d-block"> Poll </span>
+                                                    </label>
+                                                </div>
+                                                <!-- Post type item -->
+                                                <div class="flex-fill">
+                                                    <input type="radio" class="btn-check" name="poll" id="option4">
+                                                    <label class="btn btn-outline-light w-100" for="option4">
+                                                        <i class="bi bi-ui-checks-grid fs-1"></i>
+                                                        <span class="d-block"> Images </span>
+                                                    </label>
+                                                </div>
+                                                <!-- Post type item -->
+                                                <div class="flex-fill">
+                                                    <input type="radio" class="btn-check" name="poll" id="option5">
+                                                    <label class="btn btn-outline-light w-100" for="option5">
+                                                        <i class="bi bi-camera-reels fs-1"></i>
+                                                        <span class="d-block"> Video </span>
+                                                    </label>
+                                                </div>
+                                                <!-- Post type item -->
+                                                <div class="flex-fill">
+                                                    <input type="radio" class="btn-check" name="poll" id="option6">
+                                                    <label class="btn btn-outline-light w-100" for="option6">
+                                                        <i class="bi bi-chat-square fs-1"></i>
+                                                        <span class="d-block"> Other </span>
+                                                    </label>
+                                                </div>
+                                                <!-- Post type item -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Post type END -->
+
+                                    <!-- Short description -->
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Short description </label>
+                                            <textarea class="form-control" rows="3" placeholder="Add description"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <!-- Main toolbar -->
+                                    <div class="col-md-12">
+                                        <!-- Subject -->
+                                        <div class="mb-3">
+                                            <label class="form-label">Post body</label>
+                                            <!-- Editor toolbar -->
+                                            <div class="bg-light border border-bottom-0 rounded-top py-3" id="quilltoolbar">
+                        <span class="ql-formats">
+                          <select class="ql-size"></select>
+                        </span>
+                                                <span class="ql-formats">
+                          <button class="ql-bold"></button>
+                          <button class="ql-italic"></button>
+                          <button class="ql-underline"></button>
+                          <button class="ql-strike"></button>
+                        </span>
+                                                <span class="ql-formats">
+                          <select class="ql-color"></select>
+                          <select class="ql-background"></select>
+                        </span>
+                                                <span class="ql-formats">
+                          <button class="ql-code-block"></button>
+                        </span>
+                                                <span class="ql-formats">
+                          <button class="ql-list" value="ordered"></button>
+                          <button class="ql-list" value="bullet"></button>
+                          <button class="ql-indent" value="-1"></button>
+                          <button class="ql-indent" value="+1"></button>
+                        </span>
+                                                <span class="ql-formats">
+                          <button class="ql-link"></button>
+                          <button class="ql-image"></button>
+                        </span>
+                                                <span class="ql-formats">
+                          <button class="ql-clean"></button>
+                        </span>
+                                            </div>
+                                            <!-- Main toolbar -->
+                                            <div class="bg-body border rounded-bottom h-300 overflow-hidden" id="quilleditor">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <!-- Image -->
+                                            <div class="position-relative">
+                                                <h6 class="my-2">Upload post image here, or<a href="#!" class="text-primary"> Browse</a></h6>
+                                                <label class="w-100" style="cursor:pointer;">
+                      <span>
+                        <input class="form-control stretched-link" type="file" name="my-image" id="image" accept="image/gif, image/jpeg, image/png">
+                      </span>
+                                                </label>
+                                            </div>
+                                            <p class="small mb-0 mt-2"><b>Note:</b> Only JPG, JPEG and PNG. Our suggested dimensions are 600px * 450px. Larger image will be cropped to 4:3 to fit our thumbnails/previews.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <!-- Tags -->
+                                        <div class="mb-3">
+                                            <label class="form-label">Tags</label>
+                                            <textarea class="form-control" rows="1" placeholder="business, sports ..."></textarea>
+                                            <small>Maximum of 14 keywords. Keywords should all be in lowercase and separated by commas. e.g. javascript, react, marketing.</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <!-- Message -->
+                                        <div class="mb-3">
+                                            <label class="form-label">Category</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Lifestyle</option>
+                                                <option value="1">Technology</option>
+                                                <option value="2">Travel</option>
+                                                <option value="3">Business</option>
+                                                <option value="4">Sports</option>
+                                                <option value="5">Marketing</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" value="" id="postCheck">
+                                            <label class="form-check-label" for="postCheck">
+                                                Make this post featured?
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- Create post button -->
+                                    <div class="col-md-12 text-start">
+                                        <button class="btn btn-primary w-100" type="submit">Create post</button>
                                     </div>
                                 </div>
-                                <!-- Avatar upload END -->
-                            </div>
-                            <!-- Job title -->
-                            <div class="mb-3">
-                                <label class="form-label">전화번호</label>
-                                <input class="form-control" type="text" value="010-5555-1111">
-                            </div>
-                            <!-- Location -->
-                            <div class="mb-3">
-                                <label class="form-label">집 주소</label>
-                                <input class="form-control" type="text" value="서울특별시 용산구 **동 **구">
-                            </div>
-                            <!-- Bio -->
-                            <div class="mb-3">
-                                <label class="form-label">한줄 소개</label>
-                                <textarea class="form-control">어떤일이든 항상 책임감있고 최선을 다하는 사원이 되겠습니다!</textarea>
-                            </div>
-                            <!-- Birthday -->
-                            <div>
-                                <label class="form-label">생년월일</label>
-                                <input type="text" class="form-control flatpickr-input" placeholder="DD/MM/YYYY" value="2000/10/25">
-                            </div>
-                            <!-- Save button -->
-                            <div class="d-flex justify-content-end mt-4">
-                                <a href="#" class="btn text-secondary border-0 me-2">Discard</a>
-                                <a href="#" class="btn btn-primary">Save changes</a>
-                            </div>
+                            </form>
+                            <!-- Form END -->
                         </div>
                     </div>
-                    <!-- Profile END -->
-                    <div class="card bg-transparent border rounded-3 mt-4">
-                        <!-- Card header -->
-                        <div class="card-header bg-transparent border-bottom p-3">
-                            <h5 class="card-header-title mb-0">로그인중인 계정</h5>
-                        </div>
-                        <!-- Card body START -->
-                        <div class="card-body">
-                            <!-- Google -->
-                            <div class="position-relative mb-3 mt-3 d-sm-flex bg-success bg-opacity-10 border border-success p-3 rounded">
-                                <!-- Title and content -->
-                                <h2 class="fs-1 mb-0 me-3"><i class="fab fa-google text-google-icon"></i></h2>
-                                <div>
-                                    <div class="position-absolute top-0 start-100 translate-middle bg-white rounded-circle lh-1 h-15">
-                                        <i class="bi bi-check-circle-fill text-success fs-5"></i>
-                                    </div>
-                                    <h6 class="mb-1">Google</h6>
-                                    <p class="mb-1 small">You are successfully connected to your Google account</p>
-                                    <!-- Button -->
-                                    <button type="button" class="btn btn-sm btn-danger mb-0 me-2">Invoke</button>
-                                    <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
-                                </div>
-                            </div>
-
-                            <!-- Blogger -->
-                            <div class="mb-3 d-sm-flex border p-3 rounded">
-                                <!-- Title and content -->
-                                <h2 class="fs-1 mb-0 me-3"><i class="fab fa-blogger text-warning"></i></h2>
-                                <div>
-                                    <h6 class="mb-1">Blogger</h6>
-                                    <p class="mb-1 small">Connect with Blogger account for a personalized experience</p>
-                                    <!-- Button -->
-                                    <button type="button" class="btn btn-sm btn-primary mb-0 me-2">Connect Blogger </button>
-                                    <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
-                                </div>
-                            </div>
-
-                            <!-- Facebook -->
-                            <div class="d-sm-flex border p-3 rounded mb-2">
-                                <!-- Title and content -->
-                                <h2 class="fs-1 mb-0 me-3"><i class="fab fa-facebook text-facebook"></i></h2>
-                                <div>
-                                    <h6 class="mb-1">Facebook</h6>
-                                    <p class="mb-1 small">Connect with Facebook account for a personalized experience</p>
-                                    <!-- Button -->
-                                    <button type="button" class="btn btn-sm btn-primary mb-0 me-2">Connect Facebook</button>
-                                    <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card body END -->
-                    </div>
+                    <!-- Chart END -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- =======================
-    Main contain END -->
 </main>
 
-<!-- **************** MAIN CONTENT END **************** -->
-<!-- =======================
-Footer START -->
 
-<!-- =======================
-Footer END -->
 
-<!-- Back to top -->
+
 <div class="back-top"><i class="bi bi-arrow-up-short"></i></div>
 
 <!-- =======================
@@ -524,6 +525,5 @@ JS libraries, plugins and custom scripts -->
 
 <!-- JS -->
 <script src="assets/js/main.js"></script>
-
 </body>
 </html>
