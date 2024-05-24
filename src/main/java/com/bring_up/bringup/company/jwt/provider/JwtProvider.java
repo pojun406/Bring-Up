@@ -1,8 +1,9 @@
-package provider;
+package com.bring_up.bringup.company.jwt.provider;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
@@ -12,6 +13,7 @@ import java.util.Date;
 import io.jsonwebtoken.Jwts;
 
 @Component
+@ComponentScan(basePackages={"com.bring_up.bringup"})
 public class JwtProvider {
     @Value("${secret-key}")
     private String secretKey;

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import provider.JwtProvider;
+import com.bring_up.bringup.company.jwt.provider.JwtProvider;
 
 import java.util.Optional;
 
@@ -22,31 +22,6 @@ public class CompanyService {
 
     @Autowired
     private JwtProvider jwtProvider;
-
-    private VerificationService verificationService;
-
-    public Company authtoapi(Company companyDTO) {
-        // 필요한 정보 추출
-        String openDate = companyDTO.getCompanyOpenDate();
-        int license = companyDTO.getCompanyLicense();
-        String masterName = companyDTO.getMasterName();
-
-        // 정보 검증
-        boolean isValid = verificationService.verifyCompanyInfo(openDate, license, masterName);
-
-        if (isValid) {
-            // 새로운 Company 엔티티 생성
-            Company company = new Company();
-            company.setCompanyOpenDate(openDate);
-            company.setCompanyLicense(license);
-            company.setMasterName(masterName);
-            // 레파지토리에 저장
-            return companyRepository.save(company);
-        } else {
-            // 정보가 유효하지 않은 경우 처리, 예외를 던지거나 null 반환
-            throw new IllegalArgumentException("유효하지 않은 회사 정보입니다");
-        }
-    }
 
     public Company registerUser(Company companyDTO) {
         // 비밀번호를 암호화하여 저장

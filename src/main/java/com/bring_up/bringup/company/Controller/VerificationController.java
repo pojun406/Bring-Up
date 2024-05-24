@@ -1,12 +1,20 @@
 package com.bring_up.bringup.company.Controller;
 
-import com.bring_up.bringup.company.Entity.Company;
+import static com.bring_up.bringup.company.domain.enums.GlobalSuccessCode.SUCCESS;
+
 import com.bring_up.bringup.company.Service.VerificationService;
+import com.bring_up.bringup.company.domain.response.BfResponse;
+import com.bring_up.bringup.company.dto.ValidationRequestDto;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+
 
 @RestController
 @RequestMapping("/api")
@@ -19,13 +27,9 @@ public class VerificationController {
     }
 
     @PostMapping("/Authenticity")
-    public String authenticity(@RequestBody Company user){
-        // VerificationService의 메서드에 전달
-        boolean isValid = verificationService.verifyCompanyInfo(user.getCompanyOpenDate(), user.getCompanyLicense(), user.getMasterName());
-        if (isValid) {
-            return "ok";
-        } else {
-            return "fail";
-        }
+    public ResponseEntity<BfResponse<?>> validateBusinessNumber(
+            @Valid @RequestBody ValidationRequestDto businessNumberValidateRequestDto) {
+        return ResponseEntity.ok().body(new BfResponse<>(SUCCESS,
+                Map.of("isValid", verificationService.verifyCompanyInfo(businessNumberValidateRequestDto))));
     }
 }

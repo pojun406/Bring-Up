@@ -1,4 +1,4 @@
-package config;
+package com.bring_up.bringup.company.config;
 
 import org.springdoc.core.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;

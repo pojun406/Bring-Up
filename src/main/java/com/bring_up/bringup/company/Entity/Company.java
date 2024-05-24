@@ -30,7 +30,7 @@ public class Company {
     private String companyOpenDate;
 
     @Column(name = "companylicense", nullable = false)
-    private int companyLicense;
+    private String companyLicense;
 
     @Column(name = "companyphonenumber")
     private String companyPhoneNumber;
