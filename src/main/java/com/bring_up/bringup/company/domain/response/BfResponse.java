@@ -6,7 +6,7 @@ import lombok.Getter;
 
 import java.util.Map;
 
-import static com.bring_up.bringup.company.domain.enums.GlobalSuccessCode.SUCCESS;
+import static com.bring_up.bringup.company.domain.enums.GlobalSuccessCode.*;
 
 @Getter
 @JsonInclude(value = JsonInclude.Include.NON_EMPTY)

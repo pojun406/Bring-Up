@@ -1,8 +1,0 @@
-POST http://localhost:8080/api/Authenticity
-Content-Type: application/json
-
-{
-  "businessNumber": "9129129",
-  "startDate": "20000101",
-  "name": "김득만"
-}

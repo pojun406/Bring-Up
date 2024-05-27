@@ -5,6 +5,7 @@ import static com.bring_up.bringup.company.domain.enums.GlobalSuccessCode.SUCCES
 import com.bring_up.bringup.company.Service.VerificationService;
 import com.bring_up.bringup.company.domain.response.BfResponse;
 import com.bring_up.bringup.company.dto.ValidationRequestDto;
+import com.bring_up.bringup.company.dto.ValidationRequestInfo;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -25,7 +25,7 @@ public class VerificationService {
     @Value("${vendor.validURL}")
     private String url;
 
-    @Value("{vendor.serviceKey}")
+    @Value("${vendor.serviceKey}")
     private String key;
 
     // WebClient 인스턴스 생성
@@ -37,17 +37,17 @@ public class VerificationService {
                 .build();
     }
 
-    public boolean verifyCompanyInfo(ValidationRequestDto RequestDto) {
+    public boolean verifyCompanyInfo(ValidationRequestDto requestDto) {
         URI uri = UriComponentsBuilder
                 .fromHttpUrl(url + "/validate")
                 .queryParam("serviceKey", key)
                 .build(true).toUri(); // encoded:true -> 이중 인코딩 방지
 
-        ValidationRequestInfo validationRequest = ValidationRequestInfo.from(RequestDto);
+        ValidationRequestInfo requestInfo = ValidationRequestInfo.from(requestDto);
 
         ValidationResponseDto response = getWebClient().post()
                 .uri(uri)
-                .bodyValue(Map.of("businesses", List.of(validationRequest)))
+                .bodyValue(Map.of("businesses", List.of(requestInfo)))
                 .retrieve()
                 .onStatus(HttpStatusCode::is4xxClientError, clientResponse -> {
                     throw new MemberException(BUSINESS_VALIDATE_ERROR);
@@ -57,6 +57,8 @@ public class VerificationService {
                 })
                 .bodyToMono(ValidationResponseDto.class)
                 .block(); // 동기적
+
+        System.out.println("Request Body: " + response);
 
         if (response != null && response.data() != null && !response.data().isEmpty()) {
             return response.data().get(0).valid().equals("01");
