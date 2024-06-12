@@ -1,8 +1,8 @@
-package com.bring_up.bringup.company.Service;
+package com.bring_up.bringup.company.User.Service;
 
-import com.bring_up.bringup.company.dto.ValidationRequestDto;
-import com.bring_up.bringup.company.dto.ValidationResponseDto;
-import com.bring_up.bringup.company.dto.ValidationRequestInfo;
+import com.bring_up.bringup.company.User.dto.request.ValidationRequestDto;
+import com.bring_up.bringup.company.User.dto.response.ValidationResponseDto;
+import com.bring_up.bringup.company.User.dto.request.ValidationRequestInfo;
 import com.bring_up.bringup.company.exception.MemberException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.ComponentScan;

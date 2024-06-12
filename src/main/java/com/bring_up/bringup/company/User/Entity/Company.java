@@ -1,4 +1,4 @@
-package com.bring_up.bringup.company.Entity;
+package com.bring_up.bringup.company.User.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

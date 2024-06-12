@@ -1,19 +1,26 @@
-package com.bring_up.bringup.company.dto;
+package com.bring_up.bringup.company.User.dto.request;
 
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-@Getter
-@Setter
-@ToString
+@Data
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
-public class CompanyDto {
+public class JoinDto {
+    /*
+    private String userid;
+    private String username;
+    private String password;
+    private String email;
+     */
+
     private String opendate; // 개업일자
     private String licence; // 사업자 등록 번호
     private String CEO; // CEO 이름
-// ㅡㅡㅡㅡㅡㅡㅡ1차 회원가입시 필요함ㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+    // ㅡㅡㅡㅡㅡㅡㅡ1차 회원가입시 필요함ㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     private String id; // entity에서 이메일
     private String password;
 

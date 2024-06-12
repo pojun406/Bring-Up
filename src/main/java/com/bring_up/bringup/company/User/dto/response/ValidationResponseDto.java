@@ -1,4 +1,4 @@
-package com.bring_up.bringup.company.dto;
+package com.bring_up.bringup.company.User.dto.response;
 
 import java.util.List;
 
