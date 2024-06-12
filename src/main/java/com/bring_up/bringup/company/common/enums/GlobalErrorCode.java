@@ -1,7 +1,7 @@
 package com.bring_up.bringup.company.common.enums;
 
 
-import com.illiterate.illiterate.common.response.ErrorResponse;
+import com.bring_up.bringup.company.common.response.ErrorResponse;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
@@ -33,3 +33,4 @@ public enum GlobalErrorCode implements BaseErrorCode {
     }
 
 }
+

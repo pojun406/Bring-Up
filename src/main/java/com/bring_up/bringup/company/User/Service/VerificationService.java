@@ -3,7 +3,7 @@ package com.bring_up.bringup.company.User.Service;
 import com.bring_up.bringup.company.User.dto.request.ValidationRequestDto;
 import com.bring_up.bringup.company.User.dto.response.ValidationResponseDto;
 import com.bring_up.bringup.company.User.dto.request.ValidationRequestInfo;
-import com.bring_up.bringup.company.exception.MemberException;
+import com.bring_up.bringup.company.User.exception.CompanyException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpHeaders;
@@ -17,7 +17,7 @@ import java.net.URI;
 import java.util.List;
 import java.util.Map;
 
-import static com.bring_up.bringup.company.domain.enums.MemberErrorCode.BUSINESS_VALIDATE_ERROR;
+import static com.bring_up.bringup.company.common.enums.MemberErrorCode.BUSINESS_VALIDATE_ERROR;
 
 @Service
 @ComponentScan(basePackages={"config"})
@@ -50,10 +50,10 @@ public class VerificationService {
                 .bodyValue(Map.of("businesses", List.of(requestInfo)))
                 .retrieve()
                 .onStatus(HttpStatusCode::is4xxClientError, clientResponse -> {
-                    throw new MemberException(BUSINESS_VALIDATE_ERROR);
+                    throw new CompanyException(BUSINESS_VALIDATE_ERROR);
                 })
                 .onStatus(HttpStatusCode::is5xxServerError, clientResponse -> {
-                    throw new MemberException(BUSINESS_VALIDATE_ERROR);
+                    throw new CompanyException(BUSINESS_VALIDATE_ERROR);
                 })
                 .bodyToMono(ValidationResponseDto.class)
                 .block(); // 동기적
@@ -64,7 +64,7 @@ public class VerificationService {
             return response.data().get(0).valid().equals("01");
         } else {
             // 알 수 없는 요인에 의해 실패한 요청
-            throw new MemberException(BUSINESS_VALIDATE_ERROR);
+            throw new CompanyException(BUSINESS_VALIDATE_ERROR);
         }
     }
 }

@@ -1,15 +1,14 @@
 package com.bring_up.bringup.company.common.enums;
 
-
-import com.illiterate.illiterate.common.response.ErrorResponse;
+import com.bring_up.bringup.company.common.response.ErrorResponse;
 import org.springframework.http.HttpStatus;
 
 public interface BaseErrorCode {
-	int getErrorCode();
+    int getErrorCode();
 
-	String getErrorMessage();
+    String getErrorMessage();
 
-	HttpStatus getStatus();
+    HttpStatus getStatus();
 
-	ErrorResponse getErrorResponse();
+    ErrorResponse getErrorResponse();
 }

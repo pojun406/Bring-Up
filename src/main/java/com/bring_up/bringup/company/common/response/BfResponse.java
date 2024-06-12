@@ -1,12 +1,13 @@
 package com.bring_up.bringup.company.common.response;
 
-
-import com.illiterate.illiterate.common.enums.GlobalSuccessCode;
+import com.bring_up.bringup.company.common.enums.GlobalSuccessCode;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 
-import static com.illiterate.illiterate.common.enums.GlobalSuccessCode.SUCCESS;
+import static com.bring_up.bringup.company.common.enums.GlobalSuccessCode.*;
 
 @Getter
+@JsonInclude(value = JsonInclude.Include.NON_EMPTY)
 public class BfResponse<T> {
     private int code;
 

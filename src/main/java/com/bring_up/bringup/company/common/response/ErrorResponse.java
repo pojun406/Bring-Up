@@ -1,11 +1,13 @@
 package com.bring_up.bringup.company.common.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Getter
+@JsonInclude(value = JsonInclude.Include.NON_EMPTY)
 public class ErrorResponse {
     private final int errorCode;
     private final String errorMessage;
