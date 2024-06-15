@@ -1,5 +1,4 @@
-
-        
+       
 CREATE TABLE advertisement
 (
   advertisementindex INT         NOT NULL COMMENT '광고인덱스',
@@ -351,5 +350,3 @@ ALTER TABLE receipt
     FOREIGN KEY (advertisementindex)
     REFERENCES advertisement (advertisementindex);
 
-        
-      

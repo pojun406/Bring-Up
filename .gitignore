@@ -1,4 +1,4 @@
-HELP.md
+xHELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
@@ -37,7 +37,4 @@ out/
 .vscode/
 
 ### 제외 ###
-/**/node_modules/
-/node_modules/
-node_modules/
 /node_modules
