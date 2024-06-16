@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>BringUP</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Bootstrap based News, Magazine and Blog Theme">
+
+	<!-- Dark mode -->
+	<script src="/darkmode.js"></script>
+
+	<!-- includeHTML -->
+	<script src="/includeHTML.js"></script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/apexcharts/css/apexcharts.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/overlay-scrollbar/css/OverlayScrollbars.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+
+    <style>
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .tab {
+            padding: 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+            background-color: #ffffff;
+            transition: background-color 0.3s;
+        }
+
+        .tab:hover {
+            background-color: #f1f1f1;
+        }
+
+        .tab.active {
+            background-color: #007bff;
+            color: #ffffff;
+            border-bottom: none;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .timeline {
+            margin-top: 20px;
+            border-left: 2px solid #007bff;
+            padding-left: 20px;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #007bff;
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: #007bff;
+            margin-left: 30px;
+        }
+
+        .benefits {
+            margin-top: 20px;
+        }
+
+        .benefit-category {
+            margin-bottom: 20px;
+        }
+
+        .benefit-category h3 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+
+        .benefit-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .benefit-category ul li {
+            padding: 5px 0;
+        }
+
+        .range-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 40px;
+            background: #f1f1f1;
+            margin: 20px auto;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .range-bar {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: #e0e0e0;
+            transform: translateY(-50%);
+        }
+        .range-values {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+            font-size: 12px;
+            color: #777;
+        }
+        .icon-container {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #b3d9ff;
+            padding: 5px;
+            border-radius: 50%;
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+        .wrap_animation {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            background: #f1f1f1;
+            margin: 20px auto;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .innerbar {
+            position: relative;
+            top: 50%;
+            height: 10px;
+            background: #007bff;
+            transform: translateY(-50%);
+        }
+        .innerbar span {
+            position: absolute;
+            top: -25px;
+            font-size: 12px;
+            color: #777;
+        }
+        .innerbar .min {
+            left: -50px;
+        }
+        .innerbar .max {
+            right: -50px;
+        }
+        .runningman {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/5/5e/Font_Awesome_5_solid_money-bill.svg') no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const target = this.getAttribute('data-tab');
+
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(tc => tc.classList.remove('active'));
+
+                    this.classList.add('active');
+                    document.getElementById(target).classList.add('active');
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+<header include-html="/company/header/header.html"></header>
+<!-- notification-->
+<script src="/company/header/notification.js"></script>
+<script>includeHTML();</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="tabs">
+                <div class="tab active" data-tab="company-info">기업 정보</div>
+                <div class="tab" data-tab="timeline">연혁</div>
+                <div class="tab" data-tab="benefits">복리후생</div>
+                <div class="tab" data-tab="salary">직급별 연봉통계</div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div id="company-info" class="tab-content active">
+                <h1 class="text-center header-title">○○기업</h1>
+                <table class="table table-bordered">
+                    <tr>
+                        <th style="width: 20%;">상호</th>
+                        <td style="width: 20%;">○○ 기업</td>
+                    </tr>
+                    <tr>
+                        <th>대표자 이름</th>
+                        <td>김영수</td>
+                    </tr>
+                    <tr>
+                        <th>회사 주소</th>
+                        <td>의정부시 서부로 654 화평타운 404호</td>
+                    </tr>
+                    <tr>
+                        <th>홈페이지 주소</th>
+                        <td><a href="https://www.kyungmin.ac.kr/homepage/intro.do">https://www.kyungmin.ac.kr/homepage/intro.do</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="timeline" class="tab-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020년</div>
+                        <div class="timeline-event">사업 시작</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021년</div>
+                        <div class="timeline-event">국가품질경연대회 1등</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023년</div>
+                        <div class="timeline-event">2023 대한민국 기술대상</div>
+                    </div>
+                </div>
+            </div>
+            <div id="benefits" class="tab-content">
+                <div class="benefits">
+                    <div class="benefit-category">
+                        <h3>지원금/보험</h3>
+                        <ul>
+                            <li>건강검진</li>
+                            <li>각종 경조사 지원</li>
+                            <li>단체 보험</li>
+                            <li>본인/가족 의료비</li>
+                            <li>직계가족 포인</li>
+                        </ul>
+                    </div>
+                    <div class="benefit-category">
+                        <h3>급여제도</h3>
+                        <ul>
+                            <li>퇴직금</li>
+                            <li>정기보너스 지급</li>
+                            <li>장기근속자 포상</li>
+                            <li>야근수당</li>
+                            <li>휴일(특근)수당</li>
+                            <li>4대 보험</li>
+                        </ul>
+                    </div>
+                    <div class="benefit-category">
+                        <h3>선물</h3>
+                        <ul>
+                            <li>명절선물/귀향비</li>
+                            <li>생일선물/파티</li>
+                            <li>결혼기념일 선물</li>
+                        </ul>
+                    </div>
+                    <div class="benefit-category">
+                        <h3>교육/행사</h3>
+                        <ul>
+                            <li>휴양시설</li>
+                            <li>신규 입사자 교육(OJT)</li>
+                            <li>자기계발비 지원</li>
+                            <li>도서구입비 지원</li>
+                            <li>사내동호 운영</li>
+                            <li>워크샵/MT</li>
+                            <li>체육대회</li>
+                            <li>야유회</li>
+                            <li>해외연수 지원</li>
+                            <li>자녀학자금 제도</li>
+                            <li>우수사원포상</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="salary" class="tab-content">
+                <div class="title">직급별 연봉통계</div>
+                <div class="list_range" id="positon_list_div">
+                    <dl class="row finish">
+                        <dt class="title">사원 (고졸)</dt>
+                        <dd class="index">5,071</dd>
+                        <dd class="average_salary">
+                            <div class="wrap_animation">
+                                <div class="innerbar on" style="left:41.41%;width:6.15%;">
+                                    <span class="min"><em>최저</em> 4,721</span>
+                                    <span class="max"><em>최고</em> 5,422</span>
+                                </div>
+                                <span class="runningman ready run" data-average="41.28" style="background-position: -84px -37px; left: 41.28%; bottom: 0px; font-size: 12px;"></span>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="row finish">
+                        <dt class="title">사원-대졸(2,3년)</dt>
+                        <dd class="index">5,425</dd>
+                        <dd class="average_salary">
+                            <div class="wrap_animation">
+                                <div class="innerbar on" style="left:44.74%;width:5.7%;">
+                                    <span class="min"><em>최저</em> 5,100</span>
+                                    <span class="max"><em>최고</em> 5,750</span>
+                                </div>
+                                <span class="runningman ready run" data-average="44.39" style="background-position: -84px -37px; left: 44.39%; bottom: 0px; font-size: 12px;"></span>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="row finish">
+                        <dt class="title">사원-대졸(4년)</dt>
+                        <dd class="index">5,804</dd>
+                        <dd class="average_salary">
+                            <div class="wrap_animation">
+                                <div class="innerbar on" style="left:47.02%;width:7.79%;">
+                                    <span class="min"><em>최저</em> 5,360</span>
+                                    <span class="max"><em>최고</em> 6,248</span>
+                                </div>
+                                <span class="runningman ready run" data-average="47.71" style="background-position: -84px -37px; left: 47.71%; bottom: 0px; font-size: 12px;"></span>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="row finish">
+                        <dt class="title">주임</dt>
+                        <dd class="index">6,667</dd>
+                        <dd class="average_salary">
+                            <div class="wrap_animation">
+                                <div class="innerbar on" style="left:54.73%;width:7.52%;">
+                                    <span class="min"><em>최저</em> 6,239</span>
+                                    <span class="max"><em>최고</em> 7,096</span>
+                                </div>
+                                <span class="runningman ready run" data-average="55.28" style="background-position: -84px -37px; left: 55.28%; bottom: 0px; font-size: 12px;"></span>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="row finish">
+                        <dt class="title">대리</dt>
+                        <dd class="index">7,794</dd>
+                        <dd class="average_salary">
+                            <div class="wrap_animation">
+                                <div class="innerbar on" style="left:62.43%;width:11.87%;">
+                                    <span class="min"><em>최저</em> 7,117</span>
+                                    <span class="max"><em>최고</em> 8,470</span>
+                                </div>
+                                <span class="runningman ready run" data-average="65.17" style="background-position: -84px -37px; left: 65.17%; bottom: 0px; font-size: 12px;"></span>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="row finish">
+                        <dt class="title">과장</dt>
+                        <dd class="index">9,068</dd>
+                        <dd class="average_salary">
+                            <div class="wrap_animation">
+                                <div class="innerbar on" style="left:74.79%;width:9.52%;">
+                                    <span class="min"><em>최저</em> 8,526</span>
+                                    <span class="max"><em>최고</em> 9,611</span>
+                                </div>
+                                <span class="runningman ready run" data-average="76.34" style="background-position: -84px -37px; bottom: 0px; left: 76.34%; font-size: 12px;"></span>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="row finish">
+                        <dt class="title">차장</dt>
+                        <dd class="index">10,110</dd>
+                        <dd class="average_salary">
+                            <div class="wrap_animation">
+                                <div class="innerbar on" style="left:84.64%;width:8.08%;">
+                                    <span class="min"><em>최저</em> 9,649</span>
+                                    <span class="max"><em>최고</em> 10,570</span>
+                                </div>
+                                <span class="runningman ready run" data-average="85.48" style="background-position: -84px -37px; bottom: 0px; left: 85.48%; font-size: 12px;"></span>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <dl class="row finish">
+                        <dt class="title">부장</dt>
+                        <dd class="index">10,751</dd>
+                        <dd class="average_salary">
+                            <div class="wrap_animation">
+                                <div class="innerbar on" style="left:93.08%;width:2.46%;">
+                                    <span class="min"><em>최저</em> 10,611</span>
+                                    <span class="max"><em>최고</em> 10,892</span>
+                                </div>
+                                <span class="runningman ready run" data-average="91.11" style="background-position: -84px -37px; bottom: 0px; left: 91.11%; font-size: 12px;"></span>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<footer include-html="/company/footer/footer.html"></footer>
+<script>includeHTML();</script>
+</html>

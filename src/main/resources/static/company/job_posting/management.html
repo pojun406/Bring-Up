@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>BringUP</title>
+	<title>BringUP</title>
 
-    <!-- Meta Tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Webestica.com">
-    <meta name="description" content="Bootstrap based News, Magazine and Blog Theme">
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Bootstrap based News, Magazine and Blog Theme">
 
-    <!-- Dark mode -->
-    <script src="/darkmode.js"></script>
+	<!-- Dark mode -->
+	<script src="/darkmode.js"></script>
 
-    <!-- includeHTML -->
-    <script src="/includeHTML.js"></script>
+	<!-- includeHTML -->
+	<script src="/includeHTML.js"></script>
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/assets/images/favicon.ico">
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/vendor/font-awesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/vendor/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="/assets/vendor/apexcharts/css/apexcharts.css">
-    <link rel="stylesheet" type="text/css" href="/assets/vendor/overlay-scrollbar/css/OverlayScrollbars.min.css">
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/apexcharts/css/apexcharts.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/overlay-scrollbar/css/OverlayScrollbars.min.css">
 
-    <!-- Theme CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
 </head>
 
@@ -41,9 +41,233 @@
 <script>includeHTML();</script>
 
 <!-- Main Content -->
-<main>
-    <div class="align-content-center">
-        공고 관리 페이지
+<main style="margin-left: 371px; margin-right: 371px; margin-top: 16px; margin-bottom: 16px;">
+    <div class="col-12">
+        <!-- Blog list table START -->
+        <div class="card border bg-transparent rounded-3">
+            <!-- Card header START -->
+            <div class="card-header bg-transparent border-bottom p-3">
+                <div class="d-sm-flex justify-content-between align-items-center">
+                    <h5 class="mb-2 mb-sm-0">내 공고 <span id="jobCount" class="badge bg-primary bg-opacity-10 text-primary"></span></h5>
+                    <a href="/company/job_posting/registration.html" class="btn btn-sm btn-primary mb-0">Add New</a>
+                </div>
+            </div>
+            <!-- Card header END -->
+
+            <!-- Card body START -->
+            <div class="card-body">
+
+                <!-- Search and select START -->
+                <div class="row g-3 align-items-center justify-content-between mb-3">
+                    <!-- Search -->
+                    <div class="col-md-8">
+                        <form class="rounded position-relative" onsubmit="searchJobPostings(event)">
+                            <input id="searchInput" class="form-control pe-5 bg-transparent" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn bg-transparent border-0 px-2 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6 "></i></button>
+                        </form>
+                    </div>
+
+                    <!-- Select option -->
+                    <div class="col-md-3">
+                        <!-- Short by filter -->
+                        <form>
+                            <select id="categorySelect" class="form-select z-index-9 bg-transparent" aria-label=".form-select-sm">
+                                <option value="전체">전체</option>
+                                <option value="공고 제목">공고 제목</option>
+                                <option value="공고 타입">공고 타입</option>
+                                <option value="모집 분야">모집 분야</option>
+                                <option value="상태">상태</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <!-- Search and select END -->
+                <!-- 채용공고 목록 테이블 시작 -->
+                <div class="table-responsive border-0">
+                    <table class="table align-middle p-4 mb-0 table-hover table-shrink">
+                        <!-- 테이블 헤드 -->
+                        <thead class="table-dark">
+                        <tr>
+                            <th scope="col" class="border-0 rounded-start">공고 제목</th>
+                            <th scope="col" class="border-0">공고 타입</th>
+                            <th scope="col" class="border-0">게시일</th>
+                            <th scope="col" class="border-0">모집 분야</th>
+                            <th scope="col" class="border-0">지원자 수</th>
+                            <th scope="col" class="border-0">상태</th>
+                            <th scope="col" class="border-0 rounded-end">비고</th>
+                        </tr>
+                        </thead>
+
+                <script>
+                    let jobPostings = [];
+                    let currentPage = 1;
+                    const itemsPerPage = 10;
+
+                    fetch('/company/job_posting/jobPostings.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            jobPostings = data;
+                            renderJobPostings();
+                        })
+                        .catch(error => console.error('Error fetching job postings:', error));
+
+                    function renderJobPostings(filteredPostings = jobPostings) {
+                        const tbody = document.querySelector('.border-top-0');
+                        const start = (currentPage - 1) * itemsPerPage;
+                        const end = start + itemsPerPage;
+                        const paginatedPostings = filteredPostings.slice(start, end);
+
+                        tbody.innerHTML = paginatedPostings.map((posting, index) => `
+                            <tr onclick="viewJobPosting(${index}, '${posting.title}')">
+                                <td>
+                                    <h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">${posting.title}</a></h6>
+                                </td>
+                                <td>
+                                    <h6 class="mb-0"><a href="#">${posting.type}</a></h6>
+                                </td>
+                                <td>${posting.date}</td>
+                                <td>
+                                    <a href="#" class="badge ${posting.fieldClass} mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>${posting.requiredSkills.join(', ')}</a>
+                                </td>
+                                <td>
+                                    <span class="badge bg-info mb-2">${posting.numberOfApplicants}</span>
+                                </td>
+                                <td>
+                                    <span class="badge ${posting.statusClass} mb-2">${posting.status}</span>
+                                </td>
+                                <td>
+                                    <div class="d-flex gap-2">
+                                        <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="삭제" onclick="deleteJobPosting(${index})"><i class="bi bi-trash"></i></a>
+                                        <a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="편집"><i class="bi bi-pencil-square"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        `).join('');
+                        document.getElementById('totalEntries').innerText = `총 ${filteredPostings.length}개`;
+                        document.getElementById('jobCount').innerText = filteredPostings.length;
+                        renderPagination(filteredPostings.length);
+                    }
+
+                    function renderPagination(totalItems) {
+                        const totalPages = Math.ceil(totalItems / itemsPerPage);
+                        const pagination = document.querySelector('.pagination');
+                        pagination.innerHTML = `
+                            <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true" onclick="changePage(${currentPage - 1})">Prev</a>
+                            </li>
+                            ${Array.from({ length: totalPages }, (_, i) => `
+                                <li class="page-item ${currentPage === i + 1 ? 'active' : ''}">
+                                    <a class="page-link" href="#" onclick="changePage(${i + 1})">${i + 1}</a>
+                                </li>
+                            `).join('')}
+                            <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                                <a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Next</a>
+                            </li>
+                        `;
+                    }
+
+                    function changePage(page) {
+                        if (page < 1 || page > Math.ceil(jobPostings.length / itemsPerPage)) return;
+                        currentPage = page;
+                        renderJobPostings();
+                    }
+
+                    function searchJobPostings(event) {
+                        event.preventDefault();
+                        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+                        const category = document.getElementById('categorySelect').value;
+                        let filteredPostings = jobPostings;
+
+                        if (category === "공고 제목") {
+                            filteredPostings = jobPostings.filter(posting => posting.title.toLowerCase().includes(searchInput));
+                        } else if (category === "공고 타입") {
+                            filteredPostings = jobPostings.filter(posting => posting.type.toLowerCase().includes(searchInput));
+                        } else if (category === "모집 분야") {
+                            filteredPostings = jobPostings.filter(posting => posting.requiredSkills.some(skill => skill.toLowerCase().includes(searchInput)));
+                        } else if (category === "상태") {
+                            filteredPostings = jobPostings.filter(posting => posting.status.toLowerCase().includes(searchInput));
+                        } else {
+                            filteredPostings = jobPostings.filter(posting => 
+                                posting.title.toLowerCase().includes(searchInput) ||
+                                posting.type.toLowerCase().includes(searchInput) ||
+                                posting.requiredSkills.some(skill => skill.toLowerCase().includes(searchInput)) ||
+                                posting.status.toLowerCase().includes(searchInput)
+                            );
+                        }
+
+                        currentPage = 1;
+                        renderJobPostings(filteredPostings);
+                    }
+
+                    function filterJobPostings() {
+                        const category = document.getElementById('categorySelect').value;
+                        let filteredPostings = jobPostings;
+                        if (category && category !== "전체") {
+                            filteredPostings = jobPostings.filter(posting => posting.type === category);
+                        }
+                        currentPage = 1;
+                        renderJobPostings(filteredPostings);
+                    }
+
+                    function deleteJobPosting(index) {
+                        jobPostings.splice(index, 1);
+                        renderJobPostings();
+                    }
+
+                    function viewJobPosting(index, title) {
+                        window.location.href = `/company/job_posting/jobposting_details.html?title=${encodeURIComponent(title)}`;
+                    }
+
+                    document.addEventListener('DOMContentLoaded', () => {
+                        renderJobPostings();
+                        document.getElementById('categorySelect').addEventListener('change', () => {
+                            // Do nothing on change
+                        });
+                    });
+                </script>
+
+                <!-- 테이블 바디 시작 -->
+                <tbody class="border-top-0">
+                </tbody>
+                <!-- 테이블 바디 끝 -->
+                </table>
+                </div>
+                <!-- 채용공고 목록 테이블 끝 -->
+
+                <!-- Pagination START -->
+                <div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4 mt-sm-3">
+                    <!-- Content -->
+                    <p id="totalEntries" class="mb-sm-0 text-center text-sm-start">총${jobPostings.length}</p>
+                    <!-- Pagination -->
+                    <nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
+                        <ul class="pagination pagination-sm pagination-bordered mb-0">
+                            <li class="page-item" id="prevPage">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true" onclick="changePage(currentPage - 1)">Prev</a>
+                            </li>
+                            <span id="paginationNumbers"></span>
+                            <li class="page-item" id="nextPage">
+                                <a class="page-link" href="#" onclick="changePage(currentPage + 1)">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const paginationNumbers = document.getElementById('paginationNumbers');
+                            const totalPages = Math.ceil(jobPostings.length / itemsPerPage);
+
+                            for (let i = 1; i <= totalPages; i++) {
+                                const pageItem = document.createElement('li');
+                                pageItem.className = 'page-item';
+                                pageItem.innerHTML = `<a class="page-link" href="#" onclick="changePage(${i})">${i}</a>`;
+                                paginationNumbers.appendChild(pageItem);
+                            }
+                        });
+                    </script>
+                </div>
+                <!-- Pagination END -->
+            </div>
+        </div>
+        <!-- Blog list table END -->
     </div>
 </main>
 

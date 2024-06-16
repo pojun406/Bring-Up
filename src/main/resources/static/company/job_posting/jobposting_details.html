@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>BringUP</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Bootstrap based News, Magazine and Blog Theme">
+
+	<!-- Dark mode -->
+	<script src="/darkmode.js"></script>
+
+	<!-- includeHTML -->
+	<script src="/includeHTML.js"></script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/apexcharts/css/apexcharts.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/overlay-scrollbar/css/OverlayScrollbars.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+
+    <style>
+        .job-detail-section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex: 0 0 calc(50% - 10px); /* 두 개의 요소가 한 줄에 들어가도록 설정 */
+        }
+        .job-detail-section h6 {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .job-detail-section p {
+            margin: 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25em 0.4em;
+            font-size: 75%;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.375rem;
+        }
+        .badge.bg-info {
+            background-color: #17a2b8;
+        }
+        .badge.bg-primary {
+            background-color: #007bff;
+        }
+        .badge.bg-success {
+            background-color: #28a745;
+        }
+        .badge.bg-warning {
+            background-color: #ffc107;
+        }
+        .badge.bg-danger {
+            background-color: #dc3545;
+        }
+        .badge.bg-secondary {
+            background-color: #6c757d;
+        }
+        .badge.bg-light {
+            background-color: #f8f9fa;
+        }
+        .badge.bg-dark {
+            background-color: #343a40;
+        }
+
+        /* 다크모드 스타일 */
+        body.dark-mode {
+            background-color: #121212;
+        }
+        .job-detail-section.dark-mode,
+        .job-detail-section.dark-mode h6,
+        .job-detail-section.dark-mode p,
+        .job-detail-section.dark-mode input,
+        .job-detail-section.dark-mode textarea,
+        .job-detail-section.dark-mode .card,
+        .job-detail-section.dark-mode .card-header,
+        .job-detail-section.dark-mode .card-body {
+            background-color: #1e1e1e;
+            border-color: #444;
+        }
+        .job-detail-section.dark-mode input::placeholder,
+        .job-detail-section.dark-mode textarea::placeholder {
+            color: #888;
+        }
+        .row.g-3 {
+            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
+</head>
+<body>
+<header include-html="/company/header/header.html"></header>
+<script src="/company/header/notification.js"></script>
+<script>includeHTML();</script>
+
+<main style="margin-left: 371px; margin-right: 371px; margin-top: 16px; margin-bottom: 16px;">
+    <div class="col-12">
+        <div class="card border bg-transparent rounded-3">
+            <div class="card-header bg-transparent border-bottom p-3 d-flex justify-content-between align-items-center">
+                <h5 class="mb-2 mb-sm-0">채용공고 상세</h5>
+                <div class="d-flex gap-2">
+                    <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="편집"><i class="bi bi-pencil-square"></i></a>
+                    <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="삭제"><i class="bi bi-trash"></i></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row g-2">
+                    <div class="job-detail-section">
+                        <h6>공고 제목</h6>
+                        <p id="jobTitle"></p>
+                    </div>
+                    <div class="job-detail-section">
+                        <h6>공고 타입</h6>
+                        <p id="jobType"></p>
+                    </div>
+                    <div class="job-detail-section">
+                        <h6>게시일</h6>
+                        <p id="jobDate"></p>
+                    </div>
+                    <div class="job-detail-section">
+                        <h6>모집 분야</h6>
+                        <p id="jobField"></p>
+                    </div>
+                    <div class="job-detail-section">
+                        <h6>지원자 수</h6>
+                        <p id="jobApplicants"></p>
+                    </div>
+                    <div class="job-detail-section">
+                        <h6>상태</h6>
+                        <p id="jobStatus"></p>
+                    </div>
+                    <div class="job-detail-section" style="flex: 0 0 100%;">
+                        <h6>자격 요건</h6>
+                        <p id="jobQualifications"></p>
+                    </div>
+                    <div class="job-detail-section" style="flex: 0 0 100%;">
+                        <h6>필수 기술</h6>
+                        <p id="jobSkills"></p>
+                    </div>
+                    <div class="job-detail-section" style="flex: 0 0 100%;">
+                        <h6>근무 조건</h6>
+                        <p id="jobConditions"></p>
+                    </div>
+                    <div class="job-detail-section" style="flex: 0 0 100%;">
+                        <h6>복지 혜택</h6>
+                        <p id="jobBenefits"></p>
+                    </div>
+                    <div class="job-detail-section" style="flex: 0 0 100%;">
+                        <h6>근무지</h6>
+                        <p id="jobLocation"></p>
+                    </div>
+                    <div class="job-detail-section" style="flex: 0 0 100%;">
+                        <h6>상세 주소</h6>
+                        <p id="jobAddress"></p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer include-html="/company/footer/footer.html"></footer>
+<script>includeHTML();</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const jobTitle = urlParams.get('title');
+
+        fetch('/company/job_posting/jobPostings.json')
+            .then(response => response.json())
+            .then(data => {
+                const jobPosting = data.find(job => job.title === jobTitle);
+                if (jobPosting) {
+                    document.getElementById('jobTitle').textContent = jobPosting.title;
+                    document.getElementById('jobType').textContent = jobPosting.type;
+                    document.getElementById('jobDate').textContent = jobPosting.date;
+                    document.getElementById('jobField').textContent = jobPosting.field;
+                    document.getElementById('jobApplicants').textContent = jobPosting.numberOfApplicants;
+                    document.getElementById('jobStatus').textContent = jobPosting.status;
+                    document.getElementById('jobQualifications').textContent = jobPosting.qualifications;
+                    document.getElementById('jobSkills').textContent = jobPosting.requiredSkills.join(', ');
+                    document.getElementById('jobConditions').textContent = jobPosting.workingConditions;
+                    document.getElementById('jobBenefits').textContent = jobPosting.benefits.join(', ');
+                    document.getElementById('jobLocation').textContent = jobPosting.location;
+                    document.getElementById('jobAddress').textContent = jobPosting.detailedAddress;
+                } else {
+                    console.error('Job posting not found');
+                }
+            })
+            .catch(error => console.error('Error fetching job postings:', error));
+    });
+</script>
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short"></i></div>
+
+<!-- Bootstrap JS -->
+<script src="/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vendors -->
+<script src="/assets/vendor/apexcharts/js/apexcharts.min.js"></script>
+<script src="/assets/vendor/overlay-scrollbar/js/OverlayScrollbars.min.js"></script>
+
+<!-- Template Functions -->
+<script src="/assets/js/functions.js"></script>
+</body>
+</html>

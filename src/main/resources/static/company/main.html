@@ -57,13 +57,13 @@
 							<div class="card card-body border p-3">
 								<div class="d-flex align-items-center">
 									<!-- Icon -->
-									<div class="icon-xl fs-1 bg-success bg-opacity-10 rounded-3 text-success">
+									<div class="icon-xl fs-1 bg-dark bg-opacity-10 rounded-3 text-dark">
 										<i class="bi bi-people-fill"></i>
 									</div>
 									<!-- Content -->
 									<div class="ms-3">
-										<h3>134K</h3>
-										<h6 class="mb-0">Pageviews</h6>
+										<h3>10명</h3>
+										<h6 class="mb-0">지원자</h6>
 									</div>
 								</div>
 							</div>
@@ -79,8 +79,8 @@
 									</div>
 									<!-- Content -->
 									<div class="ms-3">
-										<h3>180</h3>
-										<h6 class="mb-0">Posts</h6>
+										<h3>3개</h3>
+										<h6 class="mb-0">공고</h6>
 									</div>
 								</div>
 							</div>
@@ -96,8 +96,8 @@
 									</div>
 									<!-- Content -->
 									<div class="ms-3">
-										<h3>2150</h3>
-										<h6 class="mb-0">Likes</h6>
+										<h3>100명</h3>
+										<h6 class="mb-0">관심/스크랩</h6>
 									</div>
 								</div>
 							</div>
@@ -108,13 +108,13 @@
 							<div class="card card-body border p-3">
 								<div class="d-flex align-items-center">
 									<!-- Icon -->
-									<div class="icon-xl fs-1 bg-info bg-opacity-10 rounded-3 text-info">
-										<i class="bi bi-bar-chart-line-fill"></i>
+									<div class="icon-xl fs-1 bg-success bg-opacity-10 rounded-3 text-success">
+										<i class="bi bi-currency-dollar"></i>
 									</div>
 									<!-- Content -->
 									<div class="ms-3">
-										<h3>84K</h3>
-										<h6 class="mb-0">Visitors</h6>
+										<h3>15만원</h3>
+										<h6 class="mb-0">이번달 비용</h6>
 									</div>
 								</div>
 							</div>
@@ -124,6 +124,227 @@
 					<!-- Counter END -->
 				</div>
 
+				<div class="col-12">
+					<!-- Blog list table START -->
+					<div class="card border bg-transparent rounded-3">
+						<!-- Card header START -->
+						<div class="card-header bg-transparent border-bottom p-3">
+							<div class="d-sm-flex justify-content-between align-items-center">
+								<h5 class="mb-2 mb-sm-0">내 공고 <span id="jobCount" class="badge bg-primary bg-opacity-10 text-primary"></span></h5>
+								<a href="/company/job_posting/registration.html" class="btn btn-sm btn-primary mb-0">Add New</a>
+							</div>
+						</div>
+						<!-- Card header END -->
+
+						<!-- Card body START -->
+						<div class="card-body">
+
+							<!-- Search and select START -->
+							<div class="row g-3 align-items-center justify-content-between mb-3">
+								<!-- Search -->
+								<div class="col-md-8">
+									<form class="rounded position-relative" onsubmit="searchJobPostings(event)">
+										<input id="searchInput" class="form-control pe-5 bg-transparent" type="search" placeholder="Search" aria-label="Search">
+										<button class="btn bg-transparent border-0 px-2 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6 "></i></button>
+									</form>
+								</div>
+
+								<!-- Select option -->
+								<div class="col-md-3">
+									<!-- Short by filter -->
+									<form>
+										<select id="categorySelect" class="form-select z-index-9 bg-transparent" aria-label=".form-select-sm">
+											<option value="전체">전체</option>
+											<option value="공고 제목">공고 제목</option>
+											<option value="공고 타입">공고 타입</option>
+											<option value="모집 분야">모집 분야</option>
+											<option value="상태">상태</option>
+										</select>
+									</form>
+								</div>
+							</div>
+							<!-- Search and select END -->
+							<!-- 채용공고 목록 테이블 시작 -->
+							<div class="table-responsive border-0">
+								<table class="table align-middle p-4 mb-0 table-hover table-shrink">
+									<!-- 테이블 헤드 -->
+									<thead class="table-dark">
+									<tr>
+										<th scope="col" class="border-0 rounded-start">공고 제목</th>
+										<th scope="col" class="border-0">공고 타입</th>
+										<th scope="col" class="border-0">게시일</th>
+										<th scope="col" class="border-0">모집 분야</th>
+										<th scope="col" class="border-0">상태</th>
+										<th scope="col" class="border-0 rounded-end">비고</th>
+									</tr>
+									</thead>
+
+							<script>
+								let jobPostings = [];
+								let currentPage = 1;
+								const itemsPerPage = 5;
+
+								fetch('/company/job_posting/jobPostings.json')
+									.then(response => response.json())
+									.then(data => {
+										jobPostings = data;
+										renderJobPostings();
+									})
+									.catch(error => console.error('Error fetching job postings:', error));
+
+								function renderJobPostings(filteredPostings = jobPostings) {
+									const tbody = document.querySelector('.border-top-0');
+									const start = (currentPage - 1) * itemsPerPage;
+									const end = start + itemsPerPage;
+									const paginatedPostings = filteredPostings.slice(start, end);
+
+									tbody.innerHTML = paginatedPostings.map((posting, index) => `
+										<tr>
+											<td>
+												<h6 class="course-title mt-2 mt-md-0 mb-0"><a href="/company/job_posting/jobposting_details.html?title=${encodeURIComponent(posting.title)}">${posting.title}</a></h6>
+											</td>
+											<td>
+												<h6 class="mb-0"><a href="/company/job_posting/jobposting_details.html?title=${encodeURIComponent(posting.title)}">${posting.type}</a></h6>
+											</td>
+											<td>${posting.date}</td>
+											<td>
+												<a href="/company/job_posting/jobposting_details.html?title=${encodeURIComponent(posting.title)}" class="badge ${posting.fieldClass} mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>${posting.requiredSkills.join(', ')}</a>
+											</td>
+											<td>
+												<span class="badge ${posting.statusClass} mb-2">${posting.status}</span>
+											</td>
+											<td>
+												<div class="d-flex gap-2">
+													<a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="삭제" onclick="deleteJobPosting(${index})"><i class="bi bi-trash"></i></a>
+													<a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="편집"><i class="bi bi-pencil-square"></i></a>
+												</div>
+											</td>
+										</tr>
+									`).join('');
+									document.getElementById('totalEntries').innerText = `총 ${filteredPostings.length}개`;
+									document.getElementById('jobCount').innerText = filteredPostings.length;
+									renderPagination(filteredPostings.length);
+								}
+
+								function renderPagination(totalItems) {
+									const totalPages = Math.ceil(totalItems / itemsPerPage);
+									const pagination = document.querySelector('.pagination');
+									pagination.innerHTML = `
+										<li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+											<a class="page-link" href="#" tabindex="-1" aria-disabled="true" onclick="changePage(${currentPage - 1})">Prev</a>
+										</li>
+										${Array.from({ length: totalPages }, (_, i) => `
+											<li class="page-item ${currentPage === i + 1 ? 'active' : ''}">
+												<a class="page-link" href="#" onclick="changePage(${i + 1})">${i + 1}</a>
+											</li>
+										`).join('')}
+										<li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+											<a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Next</a>
+										</li>
+									`;
+								}
+
+								function changePage(page) {
+									if (page < 1 || page > Math.ceil(jobPostings.length / itemsPerPage)) return;
+									currentPage = page;
+									renderJobPostings();
+								}
+
+								function searchJobPostings(event) {
+									event.preventDefault();
+									const searchInput = document.getElementById('searchInput').value.toLowerCase();
+									const category = document.getElementById('categorySelect').value;
+									let filteredPostings = jobPostings;
+
+									if (category === "공고 제목") {
+										filteredPostings = jobPostings.filter(posting => posting.title.toLowerCase().includes(searchInput));
+									} else if (category === "공고 타입") {
+										filteredPostings = jobPostings.filter(posting => posting.type.toLowerCase().includes(searchInput));
+									} else if (category === "모집 분야") {
+										filteredPostings = jobPostings.filter(posting => posting.requiredSkills.some(skill => skill.toLowerCase().includes(searchInput)));
+									} else if (category === "상태") {
+										filteredPostings = jobPostings.filter(posting => posting.status.toLowerCase().includes(searchInput));
+									} else {
+										filteredPostings = jobPostings.filter(posting => 
+											posting.title.toLowerCase().includes(searchInput) ||
+											posting.type.toLowerCase().includes(searchInput) ||
+											posting.requiredSkills.some(skill => skill.toLowerCase().includes(searchInput)) ||
+											posting.status.toLowerCase().includes(searchInput)
+										);
+									}
+
+									currentPage = 1;
+									renderJobPostings(filteredPostings);
+								}
+
+								function filterJobPostings() {
+									const category = document.getElementById('categorySelect').value;
+									let filteredPostings = jobPostings;
+									if (category && category !== "전체") {
+										filteredPostings = jobPostings.filter(posting => posting.type === category);
+									}
+									currentPage = 1;
+									renderJobPostings(filteredPostings);
+								}
+
+								function deleteJobPosting(index) {
+									jobPostings.splice(index, 1);
+									renderJobPostings();
+								}
+
+								document.addEventListener('DOMContentLoaded', () => {
+									renderJobPostings();
+									document.getElementById('categorySelect').addEventListener('change', () => {
+										// Do nothing on change
+									});
+								});
+							</script>
+
+							<!-- 테이블 바디 시작 -->
+							<tbody class="border-top-0">
+							</tbody>
+							<!-- 테이블 바디 끝 -->
+							</table>
+							</div>
+							<!-- 채용공고 목록 테이블 끝 -->
+
+							<!-- Pagination START -->
+							<div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4 mt-sm-3">
+								<!-- Content -->
+								<p id="totalEntries" class="mb-sm-0 text-center text-sm-start">총${jobPostings.length}</p>
+								<!-- Pagination -->
+								<nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
+									<ul class="pagination pagination-sm pagination-bordered mb-0">
+										<li class="page-item" id="prevPage">
+											<a class="page-link" href="#" tabindex="-1" aria-disabled="true" onclick="changePage(currentPage - 1)">Prev</a>
+										</li>
+										<span id="paginationNumbers"></span>
+										<li class="page-item" id="nextPage">
+											<a class="page-link" href="#" onclick="changePage(currentPage + 1)">Next</a>
+										</li>
+									</ul>
+								</nav>
+								<script>
+									document.addEventListener('DOMContentLoaded', () => {
+										const paginationNumbers = document.getElementById('paginationNumbers');
+										const totalPages = Math.ceil(jobPostings.length / itemsPerPage);
+
+										for (let i = 1; i <= totalPages; i++) {
+											const pageItem = document.createElement('li');
+											pageItem.className = 'page-item';
+											pageItem.innerHTML = `<a class="page-link" href="#" onclick="changePage(${i})">${i}</a>`;
+											paginationNumbers.appendChild(pageItem);
+										}
+									});
+								</script>
+							</div>
+							<!-- Pagination END -->
+						</div>
+					</div>
+					<!-- Blog list table END -->
+				</div>
+
+				
 				<div class="col-xl-8">
 					<!-- Chart START -->
 					<div class="card border h-100">
@@ -433,269 +654,6 @@
 							</ul>
 						</div>
 					</div>
-				</div>
-
-				<div class="col-12">
-					<!-- Blog list table START -->
-					<div class="card border bg-transparent rounded-3">
-						<!-- Card header START -->
-						<div class="card-header bg-transparent border-bottom p-3">
-							<div class="d-sm-flex justify-content-between align-items-center">
-								<h5 class="mb-2 mb-sm-0">Blog list <span class="badge bg-primary bg-opacity-10 text-primary">105</span></h5>
-								<a href="#" class="btn btn-sm btn-primary mb-0">Add New</a>
-							</div>
-						</div>
-						<!-- Card header END -->
-
-						<!-- Card body START -->
-						<div class="card-body">
-
-							<!-- Search and select START -->
-							<div class="row g-3 align-items-center justify-content-between mb-3">
-								<!-- Search -->
-								<div class="col-md-8">
-									<form class="rounded position-relative">
-										<input class="form-control pe-5 bg-transparent" type="search" placeholder="Search" aria-label="Search">
-										<button class="btn bg-transparent border-0 px-2 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6 "></i></button>
-									</form>
-								</div>
-
-								<!-- Select option -->
-								<div class="col-md-3">
-									<!-- Short by filter -->
-									<form>
-										<select class="form-select z-index-9 bg-transparent" aria-label=".form-select-sm">
-											<option value="">Sort by</option>
-											<option>Free</option>
-											<option>Newest</option>
-											<option>Oldest</option>
-										</select>
-									</form>
-								</div>
-							</div>
-							<!-- Search and select END -->
-
-							<!-- Blog list table START -->
-							<div class="table-responsive border-0">
-								<table class="table align-middle p-4 mb-0 table-hover table-shrink">
-									<!-- Table head -->
-									<thead class="table-dark">
-									<tr>
-										<th scope="col" class="border-0 rounded-start">Blog Name</th>
-										<th scope="col" class="border-0">Author Name</th>
-										<th scope="col" class="border-0">Published Date</th>
-										<th scope="col" class="border-0">Categories</th>
-										<th scope="col" class="border-0">Status</th>
-										<th scope="col" class="border-0 rounded-end">Action</th>
-									</tr>
-									</thead>
-
-									<!-- Table body START -->
-									<tbody class="border-top-0">
-									<!-- Table item -->
-									<tr>
-										<!-- Table data -->
-										<td>
-											<h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">12 worst types of business accounts you follow on Twitter</a></h6>
-										</td>
-										<!-- Table data -->
-										<td>
-											<h6 class="mb-0"><a href="#">Lori Stevens</a></h6>
-										</td>
-										<!-- Table data -->
-										<td>Jan 22, 2022</td>
-										<!-- Table data -->
-										<td>
-											<a href="#" class="badge text-bg-warning mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>Technology</a>
-										</td>
-										<!-- Table data -->
-										<td>
-											<span class="badge bg-success bg-opacity-10 text-success mb-2">Live</span>
-										</td>
-										<!-- Table data -->
-										<td>
-											<div class="d-flex gap-2">
-												<a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="bi bi-trash"></i></a>
-												<a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="bi bi-pencil-square"></i></a>
-											</div>
-										</td>
-									</tr>
-
-									<!-- Table item -->
-									<tr>
-										<!-- Table data -->
-										<td>
-											<h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">Dirty little secrets about the business industry</a></h6>
-										</td>
-										<!-- Table data -->
-										<td>
-											<h6 class="mb-0"><a href="#">Dennis Barrett</a></h6>
-										</td>
-										<!-- Table data -->
-										<td>Jan 19, 2022</td>
-										<!-- Table data -->
-										<td>
-											<a href="#" class="badge text-bg-info mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>Marketing</a>
-										</td>
-										<!-- Table data -->
-										<td>
-											<span class="badge bg-warning bg-opacity-15 text-warning mb-2">Draft</span>
-										</td>
-										<!-- Table data -->
-										<td>
-											<div class="d-flex gap-2">
-												<a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="bi bi-trash"></i></a>
-												<a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="bi bi-pencil-square"></i></a>
-											</div>
-										</td>
-									</tr>
-
-									<!-- Table item -->
-									<tr>
-										<!-- Table data -->
-										<td>
-											<h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">7 common mistakes everyone makes while traveling</a></h6>
-										</td>
-										<!-- Table data -->
-										<td>
-											<h6 class="mb-0"><a href="#">Billy Vasquez</a></h6>
-										</td>
-										<!-- Table data -->
-										<td>Nov 11, 2022</td>
-										<!-- Table data -->
-										<td>
-											<a href="#" class="badge text-bg-danger mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>Photography</a>
-										</td>
-										<!-- Table data -->
-										<td>
-											<span class="badge bg-success bg-opacity-10 text-success mb-2">Live</span>
-										</td>
-										<!-- Table data -->
-										<td>
-											<div class="d-flex gap-2">
-												<a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="bi bi-trash"></i></a>
-												<a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="bi bi-pencil-square"></i></a>
-											</div>
-										</td>
-									</tr>
-
-									<!-- Table item -->
-									<tr>
-										<!-- Table data -->
-										<td>
-											<h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">5 investment doubts you should clarify</a></h6>
-										</td>
-										<!-- Table data -->
-										<td>
-											<h6 class="mb-0"><a href="#">Lori Stevens</a></h6>
-										</td>
-										<!-- Table data -->
-										<td>Jan 22, 2022</td>
-										<!-- Table data -->
-										<td>
-											<a href="#" class="badge text-bg-success mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>Gadgets</a>
-										</td>
-										<!-- Table data -->
-										<td>
-											<span class="badge bg-success bg-opacity-10 text-success mb-2">Live</span>
-										</td>
-										<!-- Table data -->
-										<td>
-											<div class="d-flex gap-2">
-												<a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="bi bi-trash"></i></a>
-												<a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="bi bi-pencil-square"></i></a>
-											</div>
-										</td>
-									</tr>
-
-									<!-- Table item -->
-									<tr>
-										<!-- Table data -->
-										<td>
-											<h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">Bad habits that people in the industry need to quit</a></h6>
-										</td>
-										<!-- Table data -->
-										<td>
-											<h6 class="mb-0"><a href="#">Larry Lawson</a></h6>
-										</td>
-										<!-- Table data -->
-										<td>Dec 06, 2022</td>
-										<!-- Table data -->
-										<td>
-											<a href="#" class="badge bg-primary mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>Sports</a>
-										</td>
-										<!-- Table data -->
-										<td>
-											<span class="badge bg-danger bg-opacity-10 text-danger mb-2">Removed</span>
-										</td>
-										<!-- Table data -->
-										<td>
-											<div class="d-flex gap-2">
-												<a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="bi bi-trash"></i></a>
-												<a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="bi bi-pencil-square"></i></a>
-											</div>
-										</td>
-									</tr>
-
-									<!-- Table item -->
-									<tr>
-										<!-- Table data -->
-										<td>
-											<h6 class="course-title mt-2 mt-md-0 mb-0"><a href="#">Around the web: 20 fabulous infographics about business</a></h6>
-										</td>
-										<!-- Table data -->
-										<td>
-											<h6 class="mb-0"><a href="#">Bryan Knight</a></h6>
-										</td>
-										<!-- Table data -->
-										<td>Feb 14, 2022</td>
-										<!-- Table data -->
-										<td>
-											<a href="#" class="badge text-bg-danger mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>Travel</a>
-										</td>
-										<!-- Table data -->
-										<td>
-											<span class="badge bg-success bg-opacity-10 text-success mb-2">Live</span>
-										</td>
-										<!-- Table data -->
-										<td>
-											<div class="d-flex gap-2">
-												<a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="bi bi-trash"></i></a>
-												<a href="dashboard-post-edit.html" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="bi bi-pencil-square"></i></a>
-											</div>
-										</td>
-									</tr>
-
-									</tbody>
-									<!-- Table body END -->
-								</table>
-							</div>
-							<!-- Blog list table END -->
-
-							<!-- Pagination START -->
-							<div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4 mt-sm-3">
-								<!-- Content -->
-								<p class="mb-sm-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
-								<!-- Pagination -->
-								<nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
-									<ul class="pagination pagination-sm pagination-bordered mb-0">
-										<li class="page-item disabled">
-											<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Prev</a>
-										</li>
-										<li class="page-item"><a class="page-link" href="#">1</a></li>
-										<li class="page-item active"><a class="page-link" href="#">2</a></li>
-										<li class="page-item disabled"><a class="page-link" href="#">..</a></li>
-										<li class="page-item"><a class="page-link" href="#">15</a></li>
-										<li class="page-item">
-											<a class="page-link" href="#">Next</a>
-										</li>
-									</ul>
-								</nav>
-							</div>
-							<!-- Pagination END -->
-						</div>
-					</div>
-					<!-- Blog list table END -->
 				</div>
 			</div>
 		</div>

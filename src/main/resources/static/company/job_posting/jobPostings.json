@@ -1,0 +1,310 @@
+[
+    {
+    "title": "백엔드 개발자",
+    "type": "정규직",
+    "date": "2023년 10월 1일",
+    "field": "백엔드, SI 회사",
+    "fieldClass": "text-bg-warning",
+    "status": "모집중",
+    "statusClass": "bg-success bg-opacity-10 text-success",
+    "requiredSkills": ["JAVA"],
+    "qualifications": "컴퓨터 공학 전공, 3년 이상의 백엔드 개발 경험",
+    "location": "서울 강남구",
+    "detailedAddress": "테헤란로 123",
+    "numberOfPositions": 3,
+    "experience": {
+        "any": false,
+        "newcomer": false,
+        "experienced": true,
+        "years": {
+            "min": 3,
+            "max": 5
+        }
+    },
+    "requirements": "백엔드 개발 경험 필수, JAVA 숙련도",
+    "workingConditions": "주 5일 근무, 유연 근무제",
+    "benefits": ["4대 보험", "식사 지원", "교통비 지원"],
+    "recruitmentPeriod": "2023년 10월 1일 - 2023년 12월 31일",
+    "numberOfApplicants": 25
+    },
+    {
+    "title": "프론트엔드 개발자",
+    "type": "인턴",
+    "date": "2023년 11월 15일",
+    "field": "프론트엔드, 스타트업",
+    "fieldClass": "text-bg-primary",
+    "status": "모집중",
+    "statusClass": "bg-success bg-opacity-10 text-success",
+    "requiredSkills": ["React", "CSS"],
+    "qualifications": "컴퓨터 공학 전공, 2년 이상의 프론트엔드 개발 경험",
+    "location": "서울 마포구",
+    "detailedAddress": "월드컵로 20",
+    "numberOfPositions": 2,
+    "experience": {
+        "any": false,
+        "newcomer": false,
+        "experienced": true,
+        "years": {
+            "min": 2,
+            "max": 4
+        }
+    },
+    "requirements": "프론트엔드 개발 경험 필수, React 숙련도",
+    "workingConditions": "주 5일 근무, 유연 근무제",
+    "benefits": ["4대 보험", "식사 지원", "교통비 지원"],
+    "recruitmentPeriod": "2023년 11월 15일 - 2024년 1월 15일",
+    "numberOfApplicants": 15
+    },
+    {
+    "title": "데이터 엔지니어",
+    "type": "인턴",
+    "date": "2023년 12월 1일",
+    "field": "데이터 엔지니어링, 대기업",
+    "fieldClass": "text-bg-danger",
+    "status": "모집중",
+    "statusClass": "bg-success bg-opacity-10 text-success",
+    "requiredSkills": ["Python", "SQL"],
+    "qualifications": "컴퓨터 공학 전공, 5년 이상의 데이터 엔지니어링 경험",
+    "location": "서울 종로구",
+    "detailedAddress": "세종대로 50",
+    "numberOfPositions": 1,
+    "experience": {
+        "any": false,
+        "newcomer": false,
+        "experienced": true,
+        "years": {
+            "min": 5,
+            "max": 7
+        }
+    },
+    "requirements": "데이터 엔지니어링 경험 필수, Python 숙련도",
+    "workingConditions": "주 5일 근무, 유연 근무제",
+    "benefits": ["4대 보험", "식사 지원", "교통비 지원"],
+    "recruitmentPeriod": "2023년 12월 1일 - 2024년 2월 29일",
+    "numberOfApplicants": 10
+    },
+    {
+    "title": "모바일 앱 개발자",
+    "type": "정규직",
+    "date": "2023년 10월 20일",
+    "field": "모바일 개발, IT 회사",
+    "fieldClass": "text-bg-info",
+    "status": "모집중",
+    "statusClass": "bg-success bg-opacity-10 text-success",
+    "requiredSkills": ["Kotlin", "Java"],
+    "qualifications": "컴퓨터 공학 전공, 3년 이상의 모바일 개발 경험",
+    "location": "서울 서초구",
+    "detailedAddress": "반포대로 105",
+    "numberOfPositions": 2,
+    "experience": {
+        "any": false,
+        "newcomer": false,
+        "experienced": true,
+        "years": {
+            "min": 3,
+            "max": 6
+        }
+    },
+    "requirements": "모바일 개발 경험 필수, Kotlin 숙련도",
+    "workingConditions": "주 5일 근무, 유연 근무제",
+    "benefits": ["4대 보험", "식사 지원", "교통비 지원"],
+    "recruitmentPeriod": "2023년 10월 20일 - 2024년 1월 20일",
+    "numberOfApplicants": 20
+    },
+    {
+    "title": "시스템 엔지니어",
+    "type": "정규직",
+    "date": "2023년 11월 1일",
+    "field": "시스템 관리, 중견기업",
+    "fieldClass": "text-bg-secondary",
+    "status": "모집중",
+    "statusClass": "bg-success bg-opacity-10 text-success",
+    "requiredSkills": ["Linux", "Shell Script"],
+    "qualifications": "컴퓨터 공학 전공, 4년 이상의 시스템 관리 경험",
+    "location": "서울 영등포구",
+    "detailedAddress": "여의대로 35",
+    "numberOfPositions": 1,
+    "experience": {
+        "any": false,
+        "newcomer": false,
+        "experienced": true,
+        "years": {
+            "min": 4,
+            "max": 6
+        }
+    },
+    "requirements": "시스템 관리 경험 필수, Linux 숙련도",
+    "workingConditions": "주 5일 근무, 유연 근무제",
+    "benefits": ["4대 보험", "식사 지원", "교통비 지원"],
+    "recruitmentPeriod": "2023년 11월 1일 - 2024년 1월 31일",
+    "numberOfApplicants": 12
+    },
+    {
+    "title": "데브옵스 엔지니어",
+    "type": "정규직",
+    "date": "2023년 10월 15일",
+    "field": "데브옵스, 금융회사",
+    "fieldClass": "text-bg-dark",
+    "status": "모집중",
+    "statusClass": "bg-success bg-opacity-10 text-success",
+    "requiredSkills": ["AWS", "Docker"],
+    "qualifications": "컴퓨터 공학 전공, 3년 이상의 데브옵스 경험",
+    "location": "서울 중구",
+    "detailedAddress": "을지로 50",
+    "numberOfPositions": 1,
+    "experience": {
+        "any": false,
+        "newcomer": false,
+        "experienced": true,
+        "years": {
+            "min": 3,
+            "max": 5
+        }
+    },
+    "requirements": "데브옵스 경험 필수, AWS 숙련도",
+    "workingConditions": "주 5일 근무, 유연 근무제",
+    "benefits": ["4대 보험", "식사 지원", "교통비 지원"],
+    "recruitmentPeriod": "2023년 10월 15일 - 2023년 12월 31일",
+    "numberOfApplicants": 18
+    },
+    {
+    "title": "보안 엔지니어",
+    "type": "정규직",
+    "date": "2023년 10월 1일",
+    "field": "정보 보안, 보안 회사",
+    "fieldClass": "text-bg-danger",
+    "status": "모집중",
+    "statusClass": "bg-success bg-opacity-10 text-success",
+    "requiredSkills": ["Network Security", "Firewalls"],
+    "qualifications": "컴퓨터 공학 전공, 4년 이상의 보안 경험",
+    "location": "서울 성동구",
+    "detailedAddress": "왕십리로 222",
+    "numberOfPositions": 2,
+    "experience": {
+        "any": false,
+        "newcomer": false,
+        "experienced": true,
+        "years": {
+            "min": 4,
+            "max": 6
+        }
+    },
+    "requirements": "보안 경험 필수, 네트워크 보안 숙련도",
+    "workingConditions": "주 5일 근무, 유연 근무제",
+    "benefits": ["4대 보험", "식사 지원", "교통비 지원"],
+    "recruitmentPeriod": "2023년 10월 1일 - 2023년 12월 31일",
+    "numberOfApplicants": 22
+    },
+    {
+    "title": "클라우드 엔지니어",
+    "type": "정규직",
+    "date": "2023년 10월 10일",
+    "field": "클라우드, IT 서비스 회사",
+    "fieldClass": "text-bg-info",
+    "status": "모집중",
+    "statusClass": "bg-success bg-opacity-10 text-success",
+    "requiredSkills": ["Azure", "Terraform"],
+    "qualifications": "컴퓨터 공학 전공, 3년 이상의 클라우드 경험",
+    "location": "서울 강동구",
+    "detailedAddress": "강동대로 89",
+    "numberOfPositions": 2,
+    "experience": {
+        "any": false,
+        "newcomer": false,
+        "experienced": true,
+        "years": {
+            "min": 3,
+            "max": 5
+        }
+    },
+    "requirements": "클라우드 경험 필수, Azure 숙련도",
+    "workingConditions": "주 5일 근무, 유연 근무제",
+    "benefits": ["4대 보험", "식사 지원", "교통비 지원"],
+    "recruitmentPeriod": "2023년 10월 10일 - 2023년 12월 31일",
+    "numberOfApplicants": 17
+    },
+    {
+    "title": "풀스택 개발자",
+    "type": "정규직",
+    "date": "2023년 10월 5일",
+    "field": "풀스택 개발, 스타트업",
+    "fieldClass": "text-bg-primary",
+    "status": "모집중",
+    "statusClass": "bg-success bg-opacity-10 text-success",
+    "requiredSkills": ["Node.js", "React"],
+    "qualifications": "컴퓨터 공학 전공, 3년 이상의 풀스택 개발 경험",
+    "location": "서울 구로구",
+    "detailedAddress": "디지털로 32길 25",
+    "numberOfPositions": 3,
+    "experience": {
+        "any": false,
+        "newcomer": false,
+        "experienced": true,
+        "years": {
+            "min": 3,
+            "max": 5
+        }
+    },
+    "requirements": "풀스택 개발 경험 필수, Node.js 숙련도",
+    "workingConditions": "주 5일 근무, 유연 근무제",
+    "benefits": ["4대 보험", "식사 지원", "교통비 지원"],
+    "recruitmentPeriod": "2023년 10월 5일 - 2023년 12월 31일",
+    "numberOfApplicants": 30
+    },
+    {
+    "title": "인공지능 연구원",
+    "type": "정규직",
+    "date": "2023년 11월 20일",
+    "field": "AI 연구, 연구소",
+    "fieldClass": "text-bg-success",
+    "status": "모집중",
+    "statusClass": "bg-success bg-opacity-10 text-success",
+    "requiredSkills": ["Python", "TensorFlow"],
+    "qualifications": "컴퓨터 공학 전공, 3년 이상의 AI 연구 경험",
+    "location": "서울 서대문구",
+    "detailedAddress": "신촌로 52",
+    "numberOfPositions": 1,
+    "experience": {
+        "any": false,
+        "newcomer": false,
+        "experienced": true,
+        "years": {
+            "min": 3,
+            "max": 5
+        }
+    },
+    "requirements": "AI 연구 경험 필수, TensorFlow 숙련도",
+    "workingConditions": "주 5일 근무, 유연 근무제",
+    "benefits": ["4대 보험", "식사 지원", "교통비 지원"],
+    "recruitmentPeriod": "2023년 11월 20일 - 2024년 2월 20일",
+    "numberOfApplicants": 8
+    },
+    {
+    "title": "웹 개발자",
+    "type": "정규직",
+    "date": "2023년 10월 30일",
+    "field": "웹 개발, 중소기업",
+    "fieldClass": "text-bg-warning",
+    "status": "모집중",
+    "statusClass": "bg-success bg-opacity-10 text-success",
+    "requiredSkills": ["JavaScript", "HTML", "CSS"],
+    "qualifications": "컴퓨터 공학 전공, 2년 이상의 웹 개발 경험",
+    "location": "서울 송파구",
+    "detailedAddress": "송파대로 111",
+    "numberOfPositions": 2,
+    "experience": {
+        "any": false,
+        "newcomer": false,
+        "experienced": true,
+        "years": {
+            "min": 2,
+            "max": 4
+        }
+    },
+    "requirements": "웹 개발 경험 필수, JavaScript 숙련도",
+    "workingConditions": "주 5일 근무, 유연 근무제",
+    "benefits": ["4대 보험", "식사 지원", "교통비 지원"],
+    "recruitmentPeriod": "2023년 10월 30일 - 2024년 1월 31일",
+    "numberOfApplicants": 14
+    }
+]

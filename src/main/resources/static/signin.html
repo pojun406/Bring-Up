@@ -534,18 +534,18 @@ Header END -->
     function switchToCompanyLogin() {
         const loginForm = document.getElementById('loginForm');
         const loginBtn = document.getElementById('loginBtn');
-		const signupLink = document.getElementById('signupLink');
+        const signupLink = document.getElementById('signupLink');
 
         // Change the text and action of login button to reflect company login
         loginBtn.textContent = 'Company Login';
         loginBtn.classList.remove('btn-success');
         loginBtn.classList.add('btn-primary');
-		signupLink.textContent = 'Company Sign up';
+        signupLink.textContent = 'Company Sign up';
 
         // Change the link to company main page
         const companyMainLink = document.querySelector('.btn.btn-sm.btn-danger.mb-0.mx-2');
         companyMainLink.href = "/company/company_main.html"; // Change this to actual URL for company main page
-		signupLink.href="/company/auth/signup.html";
+        signupLink.href = "/company/auth/signup.html";
 
         // Add event listener to form submit
         loginForm.addEventListener('submit', function (event) {
@@ -554,35 +554,21 @@ Header END -->
             // Get input values
             const id = document.getElementById('exampleInputEmail1').value;
             const pw = document.getElementById('exampleInputPassword1').value;
-            console.log(id, pw);
-            // Send AJAX request to login endpoint
-            fetch("/api/login?id=" + id + "&pw=" + pw, {
-                method: 'POST'
-            })
-                .then(response => {
-                    if (response.ok) {
-                        return response.json();
-                    } else {
-						console.log(data.message);
-                        throw new Error('Login failed');
-                    }
-                })
-                .then(data => {
-                    console.log(data.message);
-                    window.location.href = "/company/main.html";
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
+
+            // Create form data
+            const formData = new URLSearchParams();
+            formData.append('id', id);
+            formData.append('pw', pw);
+            console.log(formData);
+            window.location.href = "/company/main.html";
         });
     }
-
 
     // Function to switch to personal login form
     function switchToPersonalLogin() {
         const loginForm = document.getElementById('loginForm');
         const loginBtn = document.getElementById('loginBtn');
-		const signupLink = document.getElementById('signupLink');
+        const signupLink = document.getElementById('signupLink');
         const personalLoginBtn = document.getElementById('personalLoginBtn');
 
         // Change action attribute of the form to personal login endpoint
@@ -592,8 +578,8 @@ Header END -->
         loginBtn.textContent = 'Sign me in';
         loginBtn.classList.remove('btn-primary');
         loginBtn.classList.add('btn-success');
-		signupLink.textContent = 'Sign up';
-		signupLink.href="/auth/signup.html";
+        signupLink.textContent = 'Sign up';
+        signupLink.href = "/auth/signup.html";
 
         // Change the link to personal main page
         const personalMainLink = document.querySelector('.btn.btn-sm.btn-danger.mb-0.mx-2');
@@ -605,7 +591,6 @@ Header END -->
 
     // Event listener for switching to personal login
     document.getElementById('personalLoginBtn').addEventListener('click', switchToPersonalLogin);
-
 </script>
 
 <!-- **************** MAIN CONTENT END **************** -->
