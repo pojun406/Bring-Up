@@ -18,3 +18,10 @@
     position: relative;
     left: 3px;
 }
+.my-profile-card{
+    border: none;
+    background: #47d1fa;
+}
+.my-profile-card:hover{
+    background: #47a0fa;
+}

@@ -113,56 +113,43 @@ Main contain START -->
                         <img class="avatarr-img" width="24" height="24" src="https://img.icons8.com/ios/24/FFFFFF/about-me.png" alt="about-me"/>
                         <span class="nav_name">마이 홈</span>
                     </a>
-                    <a href="resume.html" class="nav__link">
-                        <img class="avatar-img" width="24"  height="24" src="https://img.icons8.com/ios-filled/24/FFFFFF/resume.png" alt="resume"/>
+                    <div class="nav__link collapse" id="resumeMenu">
+                        <img class="avatar-img" width="24" height="24" src="https://img.icons8.com/ios-filled/24/FFFFFF/resume.png" alt="resume"/>
                         <span class="nav_name">자소서/이력서</span>
-                    </a>
-
-                    <div href="#" class="nav__link collapse">
-                        <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
-                        <span class="nav_name"></span>
-
                         <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
-
-                        <ul class="collapse__menu">
-                            <a href="#" class="collapse__sublink">Data</a>
-                            <a href="#" class="collapse__sublink">Group</a>
-                            <a href="#" class="collapse__sublink">Members</a>
-                        </ul>
                     </div>
-
+                    <ul class="collapse__menu" id="resumeSubmenu">
+                        <li><a href="resume_register.html" class="collapse__sublink">이력서 등록</a></li>
+                        <li><a href="resume_manage.html" class="collapse__sublink">이력서 관리</a></li>
+                        <li><a href="coverletter_manage.html" class="collapse__sublink">자소서 관리</a></li>
+                    </ul>
                     <a href="#" class="nav__link">
                         <img class="nav__icon" width="24" height="24" src="https://img.icons8.com/ios-filled/24/FFFFFF/document-1.png" alt="document-1"/>
                         <span class="nav_name">스크랩/관심기업</span>
                     </a>
-
-                    <div href="#" class="nav__link collapse">
+                    <div class="nav__link collapse">
                         <ion-icon name="people-outline" class="nav__icon"></ion-icon>
                         <span class="nav_name">Team</span>
-
                         <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
-
                         <ul class="collapse__menu">
-                            <a href="#" class="collapse__sublink">Data</a>
-                            <a href="#" class="collapse__sublink">Group</a>
-                            <a href="#" class="collapse__sublink">Members</a>
+                            <li><a href="#" class="collapse__sublink">Data</a></li>
+                            <li><a href="#" class="collapse__sublink">Group</a></li>
+                            <li><a href="#" class="collapse__sublink">Members</a></li>
                         </ul>
                     </div>
-
                     <a href="#" class="nav__link">
                         <img class="nav__icon" width="24" height="24" src="https://img.icons8.com/external-glyph-silhouettes-icons-papa-vector/24/FFFFFF/external-Feedback-black-glyph-icon-teamwork.-glyth.-silhouettes-glyph-silhouettes-icons-papa-vector.png" alt="external-Feedback-black-glyph-icon-teamwork.-glyth.-silhouettes-glyph-silhouettes-icons-papa-vector"/>
                         <span class="nav_name">지원할 만할 공고</span>
                     </a>
+                    <a href="#" class="nav__link">
+                        <img class="nav__icon" width="24" height="24" src="https://img.icons8.com/pastel-glyph/24/FFFFFF/mailing--v3.png" alt="mailing--v3"/>
+                        <span class="nav_name">받은 제안</span>
+                    </a>
+                    <a href="#" class="nav__link">
+                        <img class="nav__icon" width="24" height="24" src="https://img.icons8.com/ios/50/FFFFFF/order-history.png" alt="order-history"/>
+                        <span class="nav_name">지원 내역</span>
+                    </a>
                 </div>
-                <a href="#" class="nav__link">
-                    <img class="nav__icon" width="24" height="24" src="https://img.icons8.com/pastel-glyph/24/FFFFFF/mailing--v3.png" alt="mailing--v3"/>
-                    <span class="nav_name">받은 제안</span>
-                </a>
-                <a href="#" class="nav__link">
-
-                    <img class="nav__icon" width="24" height="24" src="https://img.icons8.com/ios/50/FFFFFF/order-history.png" alt="order-history"/>
-                    <span class="nav_name">지원 내역</span>
-                </a>
             </div>
         </nav>
     </div>
@@ -346,6 +333,7 @@ Main contain START -->
                                 <div class="col-sm-12 col-md text-center text-md-start d-md-flex justify-content-between align-items-center">
                                     <div>
                                         <h4 class="my-1">잔망루피 <i class="bi bi-patch-check-fill text-info small"></i></h4>
+                                        <button id="myProfileCard" class="my-profile-card">프로필 카드</button>
                                         <ul class="list-inline">
                                             <li class="list-inline-item"><i class="bi bi-person-fill me-1"></i> abcd@naver.com </li>
                                             <li class="list-inline-item"><i class="bi bi-geo-alt me-1"></i> 서울특별시 용산구 **동 **구 </li>
@@ -379,7 +367,7 @@ Main contain START -->
                                     <input type="text" class="form-control" value="잔망루피" placeholder="First name">
                                 </div>
                             </div>
-                            <!-- Username -->
+                             <!-- Username -->
                             <div class="mb-3">
                                 <label class="form-label">e-mail</label>
                                 <div class="input-group">
@@ -518,12 +506,17 @@ JS libraries, plugins and custom scripts -->
 <script src="assets/vendor/quill/js/quill.min.js"></script>
 
 <!-- Template Functions -->
-<script src="assets/js/functions.js"></script>
+
 <!-- IONICONS -->
 <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
 <!-- JS -->
 <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById("myProfileCard").addEventListener("click", function() {
+            window.location.href = "profile-card.html";
+        });
+    </script>
 
 </body>
 </html>
